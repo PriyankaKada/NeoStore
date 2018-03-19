@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="5"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+
+    android:weightSum="3"
+    tools:context="com.example.webwerks.neostore.Login.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.5"
+        android:orientation="vertical"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:paddingTop="40dp">
+
+        <TextView
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="NeoStore"
+            android:textColor="@color/colorAccent"
+            android:textSize="135px" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/border"
+            android:drawableLeft="@android:drawable/sym_action_email"
+            android:gravity="center"
+            android:hint="Username"
+            android:id="@+id/et_username"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/border"
+            android:drawableLeft="@android:drawable/ic_lock_lock"
+            android:gravity="center"
+            android:hint="Password"
+            android:id="@+id/et_password"
+            android:inputType="textPassword"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent" />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/button_white"
+            android:text="Login"
+            android:textColor="@color/colorPrimary"
+            android:textSize="50px" />
+
+        <TextView
+            android:id="@+id/forgot_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Forgot Password"
+            android:textColor="@color/colorAccent"
+            android:textSize="50px" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_weight="0.5"
+
+        android:paddingLeft="40dp"
+        android:paddingRight="20dp"
+        android:paddingTop="20dp"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/txt_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_weight="1.9"
+            android:gravity="start|center"
+            android:text="Don't have an account"
+            android:textAllCaps="true"
+            android:textColor="@color/colorAccent"
+            android:textSize="48px" />
+
+        <ImageView
+            android:id="@+id/img_signUp"
+            android:layout_width="138px"
+            android:layout_height="138px"
+            android:layout_gravity="right|bottom"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="0.2"
+            android:background="@color/colorPrimaryDark"
+            android:src="@android:drawable/ic_menu_add" />
+    </LinearLayout>
+
+</LinearLayout>
