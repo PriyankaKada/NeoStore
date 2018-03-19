@@ -1,19 +1,10 @@
 package com.example.webwerks.neostore.Remote;
 
-import android.util.Log;
-
-import com.example.webwerks.neostore.AppConstants;
+import com.example.webwerks.neostore.Utils.AppConstants;
 import com.example.webwerks.neostore.SignUp.Example;
-import com.google.gson.Gson;
-import java.security.cert.CertificateException;
-import java.util.Observable;
+
 import java.util.concurrent.TimeUnit;
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSession;
-import javax.net.ssl.SSLSocketFactory;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.X509TrustManager;
+
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;

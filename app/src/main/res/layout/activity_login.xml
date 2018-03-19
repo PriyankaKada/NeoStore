@@ -27,7 +27,7 @@
             android:gravity="center"
             android:text="NeoStore"
             android:textColor="@color/colorAccent"
-            android:textSize="135px" />
+            android:textSize="100px" />
 
         <EditText
             android:layout_width="match_parent"
@@ -37,6 +37,7 @@
             android:drawableLeft="@android:drawable/sym_action_email"
             android:gravity="center"
             android:hint="Username"
+            android:text="pri@kadam.com"
             android:id="@+id/et_username"
             android:textColor="@color/colorAccent"
             android:textColorHint="@color/colorAccent" />
@@ -49,6 +50,7 @@
             android:drawableLeft="@android:drawable/ic_lock_lock"
             android:gravity="center"
             android:hint="Password"
+            android:text="qwerty"
             android:id="@+id/et_password"
             android:inputType="textPassword"
             android:textColor="@color/colorAccent"
@@ -73,7 +75,7 @@
             android:gravity="center"
             android:text="Forgot Password"
             android:textColor="@color/colorAccent"
-            android:textSize="50px" />
+            android:textSize="40px" />
     </LinearLayout>
 
     <LinearLayout
@@ -97,12 +99,12 @@
             android:text="Don't have an account"
             android:textAllCaps="true"
             android:textColor="@color/colorAccent"
-            android:textSize="48px" />
+            android:textSize="30px" />
 
         <ImageView
             android:id="@+id/img_signUp"
-            android:layout_width="138px"
-            android:layout_height="138px"
+            android:layout_width="100px"
+            android:layout_height="100px"
             android:layout_gravity="right|bottom"
             android:layout_marginBottom="20dp"
             android:layout_weight="0.2"

@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.webwerks.neostore.Dashboard.DashboardActivity;
 import com.example.webwerks.neostore.R;
 import com.example.webwerks.neostore.SignUp.SignUpActivity;
 
@@ -87,5 +88,11 @@ public class LoginActivity extends Activity implements LoginView {
     @Override
     public void loginError(String message) {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void openDashboard() {
+        Intent intent=new Intent(LoginActivity.this, DashboardActivity.class);
+        startActivity(intent);
     }
 }

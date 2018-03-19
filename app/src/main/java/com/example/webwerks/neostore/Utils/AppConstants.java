@@ -1,4 +1,4 @@
-package com.example.webwerks.neostore;
+package com.example.webwerks.neostore.Utils;
 
 /**
  * Created by webwerks on 15/3/18.

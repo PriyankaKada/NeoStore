@@ -5,6 +5,7 @@ import android.util.Log;
 import com.example.webwerks.neostore.Remote.ResponseListener;
 import com.example.webwerks.neostore.Remote.RetroHelper;
 import com.example.webwerks.neostore.SignUp.Example;
+import com.example.webwerks.neostore.Utils.PreferenceHelper;
 
 import retrofit2.Response;
 
@@ -16,9 +17,9 @@ import static android.content.ContentValues.TAG;
 
 public class LoginPresenterImplementation implements LoginPresenter {
     LoginView loginView;
-    Example response1;
-    private Example res;
 
+    Example res;
+    PreferenceHelper preferenceHelper;
 
     public LoginPresenterImplementation(LoginView loginView) {
         this.loginView = loginView;
@@ -35,18 +36,19 @@ public class LoginPresenterImplementation implements LoginPresenter {
             public void onResponseSuccess(Response baseResponse) {
                 res = (Example) baseResponse.body();
                 if (res != null) {
-                    if (res.getMessage() != null) {
+                    if ((res.getMessage() != null) && (res.getData() != null)) {
                         Log.e(TAG, "onResponse LoginView Success: " + res.getMessage());
                         loginView.loginSuccess(res.getMessage());
-                    } else {
-                        Log.e(TAG, "onResponse LoginView Failed: " + res.getMessage());
 
-                        loginView.loginSuccess("Email or password is wrong. try again");
+                        loginView.openDashboard();
+
+                    } else {
+                        loginView.loginSuccess(res.getMessage());
                     }
 
                 } else {
 
-                    loginView.loginSuccess("Email or password is wrong. try again");
+                    loginView.loginError("Username or Password is incorrect.Try Again..");
                 }
             }
 
