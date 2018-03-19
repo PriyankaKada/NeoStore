@@ -13,7 +13,7 @@ import retrofit2.http.POST;
  */
 
 public interface APIClient {
-    String BaseURL = "http://staging.php-dev.in:8844/trainingapp/api/";
+
 
     //put data to server
     @FormUrlEncoded
@@ -28,6 +28,6 @@ public interface APIClient {
 
     @FormUrlEncoded
     @POST("users/login")
-    retrofit2.Call<Example> signin(@Field("email") String email,
-                                          @Field("password") String password);
+    Call<Example> signin(@Field("email") String email,
+                         @Field("password") String password);
 }

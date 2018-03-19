@@ -5,5 +5,6 @@ package com.example.webwerks.neostore;
  */
 
 public class AppConstants {
+    public static final String BASE_URL ="http://staging.php-dev.in:8844/trainingapp/api/" ;
 
 }
