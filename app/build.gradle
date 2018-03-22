@@ -37,4 +37,7 @@ dependencies {
     //Http Logging Interceptor
     compile 'com.squareup.okhttp3:logging-interceptor:3.5.0'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    //Circular ImageView
+    compile 'de.hdodenhof:circleimageview:2.2.0'
+
 }

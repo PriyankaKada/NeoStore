@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.example.webwerks.neostore.Dashboard.DashboardActivity;
 import com.example.webwerks.neostore.R;
 import com.example.webwerks.neostore.SignUp.SignUpActivity;
+import com.example.webwerks.neostore.Utils.PreferenceHelper;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,6 +30,7 @@ public class LoginActivity extends Activity implements LoginView {
     TextView forgot_password;
     LoginPresenter loginPresenter;
     String username, password;
+    PreferenceHelper preferenceHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,9 +92,14 @@ public class LoginActivity extends Activity implements LoginView {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
     }
 
-    @Override
-    public void openDashboard() {
-        Intent intent=new Intent(LoginActivity.this, DashboardActivity.class);
-        startActivity(intent);
-    }
+//    @Override
+//    public void openDashboard() {
+//        Intent intent=new Intent(LoginActivity.this, DashboardActivity.class);
+//        startActivity(intent);
+//    }
+//
+//    @Override
+//    public void getPrefrenceHelper() {
+//    preferenceHelper=new PreferenceHelper(this);
+//    }
 }
