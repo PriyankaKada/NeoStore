@@ -9,4 +9,6 @@ public interface LoginView {
     void loginValidations();
     void performSignUp();
     void loginError(String message);
+
+    void startNewActivity();
 }

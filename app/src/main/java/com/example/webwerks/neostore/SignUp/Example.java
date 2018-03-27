@@ -18,6 +18,13 @@ public class Example {
     @Expose
     private String userMsg;
 
+    public Example(int id, int role_id, String first_name,
+                   String last_name, String email, String username,
+                   Object profile_pic, Object country_id, String gender,
+                   String phone_no, Object dob, boolean is_active, String created,
+                   String modified, String access_token, String message, String user_msg) {
+    }
+
     public Integer getStatus() {
         return status;
     }
@@ -50,4 +57,15 @@ public class Example {
         this.userMsg = userMsg;
     }
 
+    @Override
+    public String toString() {
+        return "Example{" +
+                "status=" + status +
+                ", data=" + data +
+                ", message='" + message + '\'' +
+                ", userMsg='" + userMsg + '\'' +
+                '}';
+    }
 }
+
+

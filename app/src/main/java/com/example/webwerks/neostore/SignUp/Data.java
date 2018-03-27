@@ -172,4 +172,24 @@ public class Data {
         this.accessToken = accessToken;
     }
 
+    @Override
+    public String toString() {
+        return "Data{" +
+                "id=" + id +
+                ", roleId=" + roleId +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", username='" + username + '\'' +
+                ", profilePic=" + profilePic +
+                ", countryId=" + countryId +
+                ", gender='" + gender + '\'' +
+                ", phoneNo='" + phoneNo + '\'' +
+                ", dob=" + dob +
+                ", isActive=" + isActive +
+                ", created='" + created + '\'' +
+                ", modified='" + modified + '\'' +
+                ", accessToken='" + accessToken + '\'' +
+                '}';
+    }
 }
