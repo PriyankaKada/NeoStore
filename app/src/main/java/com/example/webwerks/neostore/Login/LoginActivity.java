@@ -11,7 +11,7 @@ import android.widget.Toast;
 import com.example.webwerks.neostore.Dashboard.DashboardActivity;
 import com.example.webwerks.neostore.R;
 import com.example.webwerks.neostore.SignUp.SignUpActivity;
-import com.example.webwerks.neostore.Utils.PreferenceHelper;
+
 import com.example.webwerks.neostore.Utils.SPManager;
 
 import butterknife.BindView;
