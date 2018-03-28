@@ -1,38 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/nav_cart"
+            android:icon="@drawable/office_chair"
+            android:title="My Cart"
+            app:actionLayout="@layout/menu_cart"/>
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/nav_chairs"
+            android:icon="@drawable/office_chair"
+            android:title="Chairs"
+           />
+
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/shopping"
+            android:title="Logout" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_cupboard"
+            android:icon="@drawable/shopping"
+            android:title="Cupboard" />
+        <item
+            android:id="@+id/nav_sofas"
+            android:icon="@drawable/shopping"
+            android:title="Sofas" />
+        <item
+            android:id="@+id/nav_myAccout"
+            android:icon="@drawable/shopping"
+            android:title="My Account" />
+        <item
+            android:id="@+id/nav_storeLocators"
+            android:icon="@drawable/shopping"
+            android:title="Store Locators" />
+        <item
+            android:id="@+id/nav_tables"
+            android:icon="@drawable/shopping"
+            android:title="Tables" />
+        <item
+            android:id="@+id/nav_my_orders"
+            android:icon="@drawable/shopping"
+            android:title="My Orders" />
+
+
     </group>
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>
+
 
 </menu>

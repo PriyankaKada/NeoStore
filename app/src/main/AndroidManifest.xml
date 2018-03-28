@@ -27,8 +27,8 @@
         <activity android:name=".SignUp.SignUpActivity" />
         <activity
             android:name=".Dashboard.DashboardActivity"
-            android:label="@string/title_activity_dashboard"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+           />
         <activity android:name=".Login.forgotPassword.ForgotPasswordActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
