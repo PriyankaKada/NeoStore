@@ -1,6 +1,8 @@
 package com.example.webwerks.neostore.Login;
 
 import android.content.Intent;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -24,9 +26,11 @@ public class LoginPresenterImplementation implements LoginPresenter {
     Example res;
 
 
+
     public LoginPresenterImplementation(LoginView loginView, SPManager instance) {
         this.loginView = loginView;
         this.instance = instance;
+
     }
 
     @Override
@@ -44,7 +48,13 @@ public class LoginPresenterImplementation implements LoginPresenter {
                         Log.e(TAG, "onResponse LoginView Success: " + res.getMessage());
                         loginView.loginSuccess(res.getMessage());
                         getDatafromResponse(res);
-                        loginView.startNewActivity();
+                        new Handler(Looper.getMainLooper()).post(new Runnable() {
+                            @Override
+                            public void run() {
+                                loginView.startNewActivity();
+                                // this will run in the main thread
+                            }
+                        });
 
                     } else {
                         loginView.loginSuccess(res.getMessage());

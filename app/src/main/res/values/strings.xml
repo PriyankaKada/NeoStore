@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NeoStore</string>
+    <string name="app_name">NeoSTORE</string>
     <string name="title_activity_login">Login</string>
 
     <!-- Strings related to login -->
@@ -25,4 +25,15 @@
     <string name="login">Login</string>
     <string name="forgot_password">Forgot Password</string>
     <string name="no_account">I do not have account</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="gendar">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="phone">Phone Number</string>
+    <string name="terms_condition">I agree terms and conditions</string>
+    <string name="sign_up">Signup</string>
+    <string name="reset_password">Reset</string>
 </resources>

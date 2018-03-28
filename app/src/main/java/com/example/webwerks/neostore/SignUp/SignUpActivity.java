@@ -83,39 +83,42 @@ public class SignUpActivity extends Activity implements SignupView {
     }
 
     @Override
-    public boolean validateData() {
+    public void validateData() {
         if (name.equals("")) {
             et_name.setError("Please Enter the name");
-            return false;
+            et_name.requestFocus();
+            return;
         } else if (last_name.equals("")) {
             et_last_name.setError("Please Enter the Last Name");
-            return false;
+            et_last_name.requestFocus();
+            return;
         } else if (email.equals("")) {
             et_email.setError("Please Enter the Email");
-            return false;
+            et_email.requestFocus();
+            return;
         } else if (password.equals("")) {
             et_password.setError("Please Enter the password");
-            return false;
+            et_password.requestFocus();
+            return;
         } else if (conf_password.equals("")) {
             et_Confirm_password.setError("Please Re enter password");
-            return false;
+            et_Confirm_password.requestFocus();
+            return;
         } else if (!password.equals(conf_password)) {
             et_Confirm_password.setError("Password Does not Match");
-            return false;
+            et_Confirm_password.requestFocus();
+            return;
         } else if (!terms_and_condtions.isChecked()) {
             Toast.makeText(this, "Please Accept Terms and Condition", Toast.LENGTH_LONG).show();
-            return false;
+           return;
         }
 
-        return true;
     }
 
     @Override
     public void performSignUp() {
         getDatafromEdittext();
-        if (validateData()) {
-            signUpPresenter.preformSignUp(name, last_name, email, password,conf_password, gender, phone_no);
-        }
+        signUpPresenter.preformSignUp(name, last_name, email, password,conf_password, gender, phone_no);
     }
 
     @Override

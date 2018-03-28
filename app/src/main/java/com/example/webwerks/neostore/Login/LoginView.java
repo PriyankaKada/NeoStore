@@ -7,8 +7,9 @@ package com.example.webwerks.neostore.Login;
 public interface LoginView {
     void loginSuccess(String userMsg);
     void loginValidations();
-    void performSignUp();
-    void loginError(String message);
 
+    void loginError(String message);
+    void forgotPassword();
     void startNewActivity();
+    void performSignUp();
 }

@@ -18,10 +18,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
-        android:text="NeoStore"
+        android:text="@string/app_name"
+        android:fontFamily="@font/gothambold"
         android:layout_marginTop="15dp"
         android:textColor="@color/colorAccent"
-        android:textSize="120px" />
+        android:textSize="115px" />
 
     <EditText
         android:id="@+id/name"
@@ -30,7 +31,8 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/border"
         android:drawableLeft="@android:drawable/sym_action_email"
-        android:hint="First Name"
+        android:hint="@string/first_name"
+        android:fontFamily="@font/gothamlight"
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent" />
 
@@ -41,7 +43,8 @@
         android:layout_marginTop="15dp"
         android:background="@drawable/border"
         android:drawableLeft="@android:drawable/sym_action_email"
-        android:hint="Last Name"
+        android:hint="@string/last_name"
+        android:fontFamily="@font/gothamlight"
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent" />
 
@@ -52,7 +55,9 @@
         android:layout_marginTop="15dp"
         android:background="@drawable/border"
         android:drawableLeft="@android:drawable/sym_action_email"
-        android:hint="Email"
+        android:fontFamily="@font/gothamlight"
+
+        android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent" />
@@ -64,7 +69,9 @@
         android:background="@drawable/border"
         android:drawableLeft="@android:drawable/sym_action_email"
         android:layout_marginTop="15dp"
-        android:hint="Password"
+        android:hint="@string/password"
+        android:fontFamily="@font/gothamlight"
+
         android:inputType="textPassword"
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent" />
@@ -76,7 +83,9 @@
         android:layout_marginTop="15dp"
         android:background="@drawable/border"
         android:drawableLeft="@android:drawable/sym_action_email"
-        android:hint="Confirm Password"
+        android:fontFamily="@font/gothamlight"
+
+        android:hint="@string/confirm_password"
         android:inputType="textPassword"
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent" />
@@ -92,7 +101,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:text="Gender"
+            android:text="@string/gendar"
+            android:fontFamily="@font/gothambook"
+
             android:textColor="@color/colorAccent" />
 
         <RadioGroup
@@ -107,7 +118,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
                 android:checked="true"
-                android:text="Male"
+                android:fontFamily="@font/gothambook"
+
+                android:text="@string/male"
                 android:buttonTint="@color/colorAccent"
                 android:textColor="@color/colorAccent" />
 
@@ -115,7 +128,9 @@
                 android:id="@+id/radiofemale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Female"
+                android:fontFamily="@font/gothambook"
+
+                android:text="@string/female"
                 android:buttonTint="@color/colorAccent"
                 android:textColor="@color/colorAccent" />
 
@@ -130,9 +145,10 @@
         android:layout_height="wrap_content"
         android:background="@drawable/border"
         android:drawableLeft="@android:drawable/sym_action_email"
-        android:hint="Phone Number"
+        android:hint="@string/phone"
         android:layout_marginTop="15dp"
         android:inputType="number"
+        android:fontFamily="@font/gothamlight"
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent" />
 
@@ -143,8 +159,9 @@
         android:checked="true"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
+        android:fontFamily="@font/gothamlight"
         android:layout_marginTop="15dp"
-        android:text="I agree the terms and conditions"
+        android:text="@string/terms_condition"
         android:textColor="@color/colorAccent"
         android:buttonTint="@color/colorAccent"/>
 
@@ -153,7 +170,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/button_white"
-        android:text="Sign Up"
+        android:text="@string/sign_up"
+        android:fontFamily="@font/gothambook"
         android:layout_marginTop="15dp"
         android:textColor="@color/colorPrimary"
         android:textSize="50px" />

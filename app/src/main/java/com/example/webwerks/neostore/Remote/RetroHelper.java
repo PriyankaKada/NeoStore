@@ -1,5 +1,6 @@
 package com.example.webwerks.neostore.Remote;
 
+import com.example.webwerks.neostore.Login.forgotPassword.ForgotPasswordModel;
 import com.example.webwerks.neostore.Utils.AppConstants;
 import com.example.webwerks.neostore.SignUp.Example;
 
@@ -59,7 +60,10 @@ public class RetroHelper {
         Call<Example> call = apiService.createAccount(name, lastname, email, password, confirm_password, gender, phone_number);
         networkCall(call, responseListener);
     }
-
+    public void passwordRequest(String email, ResponseListener responseListener) {
+        Call<ForgotPasswordModel> call = apiService.forgotPassword(email);
+        networkCall(call, responseListener);
+    }
 
     private <T> void networkCall(Call<T> call, final ResponseListener responseListener) {
         call.enqueue(new Callback<T>() {

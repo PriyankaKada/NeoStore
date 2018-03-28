@@ -15,31 +15,33 @@ import android.view.MenuItem;
 
 import com.example.webwerks.neostore.R;
 
-import butterknife.BindView;
-
-
-
 public class DashboardActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    @BindView(R.id.toolbar)
-    Toolbar toolbar;
-    @BindView(R.id.drawer_layout)
-    DrawerLayout drawer_layout;
-    @BindView(R.id.nav_view)
-    NavigationView nav_view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard2);
-
+        setContentView(R.layout.activity_dashboard);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer_layout.addDrawerListener(toggle);
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        nav_view.setNavigationItemSelectedListener(this);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override
@@ -80,24 +82,17 @@ public class DashboardActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_cart) {
+        if (id == R.id.nav_camera) {
             // Handle the camera action
-        } else if (id == R.id.nav_chairs) {
+        } else if (id == R.id.nav_gallery) {
 
-        } else if (id == R.id.nav_logout) {
+        } else if (id == R.id.nav_slideshow) {
 
-        } else if (id == R.id.nav_cupboard) {
+        } else if (id == R.id.nav_manage) {
 
-        } else if (id == R.id.nav_sofas) {
+        } else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_my_orders) {
-
-        }else if (id == R.id.nav_myAccout) {
-
-        }else if (id == R.id.nav_storeLocators) {
-
-        }
-        else if (id == R.id.nav_tables) {
+        } else if (id == R.id.nav_send) {
 
         }
 

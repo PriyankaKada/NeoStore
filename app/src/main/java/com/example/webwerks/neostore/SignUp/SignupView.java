@@ -5,7 +5,7 @@ package com.example.webwerks.neostore.SignUp;
  */
 
 public interface SignupView {
-    boolean validateData();
+    void validateData();
     void performSignUp();
     void success(String message);
     void error(String message);

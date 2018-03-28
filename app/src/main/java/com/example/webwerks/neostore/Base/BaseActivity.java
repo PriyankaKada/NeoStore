@@ -5,13 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 
-import com.example.webwerks.neostore.R;
-import com.example.webwerks.neostore.Utils.PreferenceHelper;
-
-import java.util.Observable;
-import java.util.Observer;
 
 /**
  * Created by webwerks on 19/3/18.

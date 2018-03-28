@@ -1,6 +1,7 @@
 package com.example.webwerks.neostore.Remote;
 
 
+import com.example.webwerks.neostore.Login.forgotPassword.ForgotPasswordModel;
 import com.example.webwerks.neostore.SignUp.Example;
 
 import retrofit2.Call;
@@ -30,4 +31,7 @@ public interface APIClient {
     @POST("users/login")
     Call<Example> signin(@Field("email") String email,
                          @Field("password") String password);
+    @FormUrlEncoded
+    @POST("users/forgot")
+    Call<ForgotPasswordModel> forgotPassword(@Field("email") String email);
 }
