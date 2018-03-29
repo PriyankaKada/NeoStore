@@ -27,11 +27,11 @@
         <activity android:name=".SignUp.SignUpActivity" />
         <activity
             android:name=".Dashboard.DashboardActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-           />
-        <activity android:name=".Login.forgotPassword.ForgotPasswordActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Login.forgotPassword.ForgotPasswordActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity android:name=".ProductListing.ProductListingActivity"></activity>
     </application>
 
 </manifest>

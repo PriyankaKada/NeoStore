@@ -4,5 +4,6 @@
     <color name="colorPrimaryDark">#9e0100</color>
     <color name="colorAccent">#ffffff</color>
     <color name="colorAccent_sec">#000000</color>
+    <color name="colorAccent_sec_light">#8e8e8e</color>
 
 </resources>
