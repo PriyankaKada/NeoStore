@@ -31,7 +31,8 @@
         <activity
             android:name=".Login.forgotPassword.ForgotPasswordActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-        <activity android:name=".ProductListing.ProductListingActivity"></activity>
+        <activity android:name=".ProductListing.ProductListingActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">></activity>
     </application>
 
 </manifest>

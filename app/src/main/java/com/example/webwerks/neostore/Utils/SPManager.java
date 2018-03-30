@@ -56,7 +56,7 @@ public class SPManager {
         return s.getString(key, "");
     }
 
-    public int retriveInt(String key) {
+    public int retriveInt(String key, int i) {
         return s.getInt(key, 0);
     }
 

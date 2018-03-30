@@ -1,5 +1,6 @@
 package com.example.webwerks.neostore.Dashboard;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.webwerks.neostore.ProductListing.ProductListingActivity;
 import com.example.webwerks.neostore.R;
 import com.example.webwerks.neostore.Utils.SPManager;
 
@@ -27,9 +29,10 @@ import java.util.TimerTask;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class DashboardActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, DashboradView {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
     @BindView(R.id.drawer_layout)
@@ -40,7 +43,15 @@ public class DashboardActivity extends AppCompatActivity
     LinearLayout sliderDotspanel;
     @BindView(R.id.viewPager)
     ViewPager viewPager;
-
+    @BindView(R.id.ll_chair)
+    LinearLayout ll_chair;
+    @BindView(R.id.ll_cupboard)
+    LinearLayout ll_cupboard;
+    @BindView(R.id.ll_sofa)
+    LinearLayout ll_sofa;
+    @BindView(R.id.ll_table)
+    LinearLayout ll_table;
+    int category_id;
     TextView full_name, tv_email;
     int images[] = {R.drawable.image_1, R.drawable.image_2, R.drawable.image_3, R.drawable.image_4};
     MyCustomPagerAdapter myCustomPagerAdapter;
@@ -67,13 +78,21 @@ public class DashboardActivity extends AppCompatActivity
 
     }
 
+    @OnClick(R.id.ll_table)
+    public void tableClicked() {
+        category_id=1;
+       SPManager.getInstance(getApplicationContext()).saveInt("Product_category_id",category_id);
+       openAnothorActivity();
+
+    }
+
     private void getBannerImages() {
         myCustomPagerAdapter = new MyCustomPagerAdapter(DashboardActivity.this, images);
         viewPager.setAdapter(myCustomPagerAdapter);
         dotscount = myCustomPagerAdapter.getCount();
         dots = new ImageView[dotscount];
 
-        for(int i = 0; i < dotscount; i++){
+        for (int i = 0; i < dotscount; i++) {
 
             dots[i] = new ImageView(this);
             dots[i].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.inactive_dot));
@@ -97,7 +116,7 @@ public class DashboardActivity extends AppCompatActivity
             @Override
             public void onPageSelected(int position) {
 
-                for(int i = 0; i< dotscount; i++){
+                for (int i = 0; i < dotscount; i++) {
                     dots[i].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.inactive_dot));
                 }
 
@@ -115,6 +134,12 @@ public class DashboardActivity extends AppCompatActivity
         timer.scheduleAtFixedRate(new MyTimerTask(), 2000, 4000);
     }
 
+    @Override
+    public void openAnothorActivity() {
+        Intent intent = new Intent(DashboardActivity.this, ProductListingActivity.class);
+        startActivity(intent);
+    }
+
 
     public class MyTimerTask extends TimerTask {
 
@@ -125,9 +150,9 @@ public class DashboardActivity extends AppCompatActivity
                 @Override
                 public void run() {
 
-                    if(viewPager.getCurrentItem() == 0){
+                    if (viewPager.getCurrentItem() == 0) {
                         viewPager.setCurrentItem(1);
-                    } else if(viewPager.getCurrentItem() == 1){
+                    } else if (viewPager.getCurrentItem() == 1) {
                         viewPager.setCurrentItem(2);
                     } else {
                         viewPager.setCurrentItem(0);
@@ -138,7 +163,6 @@ public class DashboardActivity extends AppCompatActivity
 
         }
     }
-
 
 
     private void getdatafromSp() {
