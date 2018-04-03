@@ -2,6 +2,7 @@ package com.example.webwerks.neostore.Remote;
 
 
 import com.example.webwerks.neostore.Login.forgotPassword.ForgotPasswordModel;
+import com.example.webwerks.neostore.ProductDetail.SingleProductDetails;
 import com.example.webwerks.neostore.ProductListing.ProductDatail;
 import com.example.webwerks.neostore.SignUp.Example;
 
@@ -40,4 +41,8 @@ public interface APIClient {
 
     @GET("products/getList")
     Call<ProductDatail> getProductDatails(@Query("product_category_id") int category_id);
+
+    @GET("products/getDetail")
+    Call<SingleProductDetails> getSingleProductDetails(@Query("product_id") int product_id);
+
 }

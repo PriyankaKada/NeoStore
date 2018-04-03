@@ -5,5 +5,5 @@ package com.example.webwerks.neostore.ProductDetail;
  */
 
 public interface ProductDetailPresenter {
-
+    void getDatafromAPI(int product_id);
 }

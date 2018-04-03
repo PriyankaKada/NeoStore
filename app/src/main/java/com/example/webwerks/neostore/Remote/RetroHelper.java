@@ -1,6 +1,7 @@
 package com.example.webwerks.neostore.Remote;
 
 import com.example.webwerks.neostore.Login.forgotPassword.ForgotPasswordModel;
+import com.example.webwerks.neostore.ProductDetail.SingleProductDetails;
 import com.example.webwerks.neostore.ProductListing.ProductDatail;
 
 import com.example.webwerks.neostore.Utils.AppConstants;
@@ -68,6 +69,10 @@ public class RetroHelper {
     }
     public void ProductsRequest(int category_id, ResponseListener responseListener) {
         Call<ProductDatail> call = apiService.getProductDatails(category_id);
+        networkCall(call, responseListener);
+    }
+    public void getSingleProductDetail(int product_id, ResponseListener responseListener) {
+        Call<SingleProductDetails> call = apiService.getSingleProductDetails(product_id);
         networkCall(call, responseListener);
     }
 

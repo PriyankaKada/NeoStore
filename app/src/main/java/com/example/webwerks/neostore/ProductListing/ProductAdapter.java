@@ -19,6 +19,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.webwerks.neostore.ProductDetail.ProductDetailActivity;
 import com.example.webwerks.neostore.R;
+import com.example.webwerks.neostore.Utils.SPManager;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -37,8 +38,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     ProductData productData;
 
 
-    ProductAdapter(Context mContext,List<ProductData> productlistItem) {
-        this.mContext=mContext;
+    ProductAdapter(Context mContext, List<ProductData> productlistItem) {
+        this.mContext = mContext;
         this.productlistItem = productlistItem;
     }
 
@@ -56,7 +57,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         holder.itemView.setTag(position);
         holder.txt_product_name.setText(productlistItem.get(position).getName());
         holder.txt_product_desc.setText(productlistItem.get(position).getDescription());
-        holder.txt_product_price_view.setText("Rs: "+productlistItem.get(position).getCost().toString());
+        holder.txt_product_price_view.setText("Rs: " + productlistItem.get(position).getCost().toString());
         holder.ratingBar.setNumStars(5);
         holder.ratingBar.setRating(productlistItem.get(position).getRating());
 
@@ -65,16 +66,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
                 .placeholder(R.drawable.placeholder)
                 .into(holder.imageView);
 
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(mContext,ProductDetailActivity.class);
-                productData=productlistItem.get((Integer) v.getTag());
-                intent.putExtra("MyClass", productData);
-
+                Intent intent = new Intent(mContext, ProductDetailActivity.class);
+                productData = productlistItem.get((Integer) v.getTag());
+                int product_id = productData.getId();
+                SPManager.getInstance(mContext).saveInt("product_id", product_id);
                 mContext.startActivity(intent);
-
             }
         });
 
@@ -88,17 +87,17 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     public static class ProductViewHolder extends RecyclerView.ViewHolder {
 
 
-        private TextView txt_product_name, txt_product_desc,txt_product_price_view;
+        private TextView txt_product_name, txt_product_desc, txt_product_price_view;
         private RatingBar ratingBar;
         private ImageView imageView;
 
         ProductViewHolder(View view) {
             super(view);
-            ratingBar=(RatingBar)view.findViewById(R.id.ratingBar);
+            ratingBar = (RatingBar) view.findViewById(R.id.ratingBar);
             txt_product_name = (TextView) view.findViewById(R.id.txt_product_name);
             txt_product_desc = (TextView) view.findViewById(R.id.txt_product_desc);
             txt_product_price_view = (TextView) view.findViewById(R.id.txt_product_price);
-            imageView=(ImageView)view.findViewById(R.id.img_product) ;
+            imageView = (ImageView) view.findViewById(R.id.img_product);
 
 
         }

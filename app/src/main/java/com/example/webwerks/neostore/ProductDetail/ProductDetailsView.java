@@ -7,8 +7,8 @@ import com.example.webwerks.neostore.ProductListing.ProductData;
  */
 
 public interface ProductDetailsView {
-    ProductData getIntentData();
-    void setTitle(String Title);
-    void setData();
     void shareIntent();
+    void setData(SingleProductDetails res);
+
+    void getImageString(String image_url);
 }
