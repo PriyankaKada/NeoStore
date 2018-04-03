@@ -5,5 +5,7 @@
     <color name="colorAccent">#ffffff</color>
     <color name="colorAccent_sec">#000000</color>
     <color name="colorAccent_sec_light">#8e8e8e</color>
+    <color name="color_stars">#ffb901</color>
+
 
 </resources>

@@ -38,4 +38,6 @@
     <string name="reset_password">Reset</string>
     <string name="sofas">Sofas</string>
     <string name="Cupboards">Cupboards</string>
+    <string name="buy">Buy Now</string>
+    <string name="rate">Rate</string>
 </resources>

@@ -5,5 +5,5 @@ package com.example.webwerks.neostore.Dashboard;
  */
 
 public interface DashboradView {
-    void openAnothorActivity();
+    void openAnothorActivity(String table);
 }

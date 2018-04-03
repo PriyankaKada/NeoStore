@@ -17,6 +17,14 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <ImageView
+                android:id="@+id/imgback"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/back"
+                android:foregroundGravity="left|center_vertical"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -26,8 +34,7 @@
                 android:textColor="@color/colorAccent"
                 android:fontFamily="@font/gothambold"
                 android:id="@+id/toolbar_title"
-                android:drawableEnd="@android:drawable/ic_menu_search"/>
-
+                android:drawableEnd="@drawable/search"/>
 
         </android.support.v7.widget.Toolbar>
 

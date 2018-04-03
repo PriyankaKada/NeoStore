@@ -2,8 +2,6 @@ package com.example.webwerks.neostore.Dashboard;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.view.View;
@@ -13,9 +11,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -80,11 +76,41 @@ public class DashboardActivity extends AppCompatActivity
 
     @OnClick(R.id.ll_table)
     public void tableClicked() {
-        category_id=1;
+       category_id=1;
        SPManager.getInstance(getApplicationContext()).saveInt("Product_category_id",category_id);
-       openAnothorActivity();
+        SPManager.getInstance(getApplicationContext()).saveString("Product_category","Table");
+        openAnothorActivity(SPManager.getInstance(getApplicationContext()).retriveString("Product_category"));
+
 
     }
+    @OnClick(R.id.ll_chair)
+    public void chairClicked() {
+        category_id=2;
+        SPManager.getInstance(getApplicationContext()).saveInt("Product_category_id",category_id);
+        SPManager.getInstance(getApplicationContext()).saveString("Product_category","Chair");
+        openAnothorActivity(SPManager.getInstance(getApplicationContext()).retriveString("Product_category"));
+
+
+    }
+    @OnClick(R.id.ll_sofa)
+    public void sofaClicked() {
+        category_id=3;
+        SPManager.getInstance(getApplicationContext()).saveInt("Product_category_id",category_id);
+        SPManager.getInstance(getApplicationContext()).saveString("Product_category","Sofa");
+        openAnothorActivity(SPManager.getInstance(getApplicationContext()).retriveString("Product_category"));
+
+
+    }
+    @OnClick(R.id.ll_cupboard)
+    public void cupboardClicked() {
+        category_id=4;
+        SPManager.getInstance(getApplicationContext()).saveInt("Product_category_id",category_id);
+        SPManager.getInstance(getApplicationContext()).saveString("Product_category","Cupboard");
+        openAnothorActivity(SPManager.getInstance(getApplicationContext()).retriveString("Product_category"));
+
+
+    }
+
 
     private void getBannerImages() {
         myCustomPagerAdapter = new MyCustomPagerAdapter(DashboardActivity.this, images);
@@ -135,8 +161,9 @@ public class DashboardActivity extends AppCompatActivity
     }
 
     @Override
-    public void openAnothorActivity() {
+    public void openAnothorActivity(String title) {
         Intent intent = new Intent(DashboardActivity.this, ProductListingActivity.class);
+        intent.putExtra("Title",title);
         startActivity(intent);
     }
 

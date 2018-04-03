@@ -4,7 +4,9 @@ package com.example.webwerks.neostore.ProductListing;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class ProductData {
+import java.io.Serializable;
+
+public class ProductData implements Serializable {
 
     @SerializedName("id")
     @Expose

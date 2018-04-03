@@ -30,9 +30,14 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Login.forgotPassword.ForgotPasswordActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".ProductListing.ProductListingActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            >
+        </activity>
+        <activity android:name=".ProductDetail.ProductDetailActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-        <activity android:name=".ProductListing.ProductListingActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">></activity>
     </application>
 
 </manifest>

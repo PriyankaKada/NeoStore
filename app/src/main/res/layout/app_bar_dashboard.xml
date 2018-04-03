@@ -26,7 +26,7 @@
                 android:textColor="@color/colorAccent"
                 android:fontFamily="@font/gothambold"
                 android:id="@+id/toolbar_title"
-                android:drawableEnd="@android:drawable/ic_menu_search"/>
+                android:drawableEnd="@drawable/search"/>
 
 
         </android.support.v7.widget.Toolbar>
