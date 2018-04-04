@@ -4,6 +4,7 @@ import com.example.webwerks.neostore.Login.forgotPassword.ForgotPasswordModel;
 import com.example.webwerks.neostore.ProductDetail.SingleProductDetails;
 import com.example.webwerks.neostore.ProductListing.ProductDatail;
 
+import com.example.webwerks.neostore.Rating.Rating;
 import com.example.webwerks.neostore.Utils.AppConstants;
 import com.example.webwerks.neostore.SignUp.Example;
 
@@ -73,6 +74,10 @@ public class RetroHelper {
     }
     public void getSingleProductDetail(int product_id, ResponseListener responseListener) {
         Call<SingleProductDetails> call = apiService.getSingleProductDetails(product_id);
+        networkCall(call, responseListener);
+    }
+    public void setRating(String product_id,int ratings, ResponseListener responseListener) {
+        Call<Rating> call = apiService.setRatings(product_id,ratings);
         networkCall(call, responseListener);
     }
 

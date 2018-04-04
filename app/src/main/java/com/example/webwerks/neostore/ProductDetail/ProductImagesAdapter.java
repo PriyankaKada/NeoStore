@@ -43,21 +43,20 @@ public class ProductImagesAdapter extends RecyclerView.Adapter<ProductImagesAdap
     public void onBindViewHolder(ProductImageViewHolder holder, int position) {
         holder.itemView.setTag(position);
         productImage = productImageList.get(position);
-
         String image_url=productImage.getImage();
 
                 Glide.with(mContext)
                 .load(image_url)
                 .placeholder(R.drawable.placeholder)
                 .into(holder.imageView);
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 productImage = productImageList.get((Integer) v.getTag());
                 String image_url=productImage.getImage();
                 productDetailsView.getImageString(image_url);
+//                v. setBackgroundResource(R.drawable.border_clicked);
+
             }
         });
 

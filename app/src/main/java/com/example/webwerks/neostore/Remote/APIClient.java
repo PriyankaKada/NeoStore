@@ -4,6 +4,7 @@ package com.example.webwerks.neostore.Remote;
 import com.example.webwerks.neostore.Login.forgotPassword.ForgotPasswordModel;
 import com.example.webwerks.neostore.ProductDetail.SingleProductDetails;
 import com.example.webwerks.neostore.ProductListing.ProductDatail;
+import com.example.webwerks.neostore.Rating.Rating;
 import com.example.webwerks.neostore.SignUp.Example;
 
 import retrofit2.Call;
@@ -44,5 +45,10 @@ public interface APIClient {
 
     @GET("products/getDetail")
     Call<SingleProductDetails> getSingleProductDetails(@Query("product_id") int product_id);
+
+    @FormUrlEncoded
+    @POST("products/setRating")
+    Call<Rating> setRatings(@Field("product_id") String product_id,
+                            @Field("rating") int rating);
 
 }

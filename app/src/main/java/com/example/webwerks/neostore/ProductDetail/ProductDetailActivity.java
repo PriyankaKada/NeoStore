@@ -14,10 +14,9 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.webwerks.neostore.ProductListing.ProductData;
 import com.example.webwerks.neostore.R;
+import com.example.webwerks.neostore.Rating.RatingBarActivity;
 import com.example.webwerks.neostore.Utils.SPManager;
-import com.squareup.picasso.Picasso;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -65,7 +64,7 @@ public class ProductDetailActivity extends AppCompatActivity implements ProductD
     ProductDetailPresenter productDetailPresenter;
     private ProductImagesAdapter productImagesAdapter;
 
-
+    String main_image_url,title,product_id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,7 +95,10 @@ public class ProductDetailActivity extends AppCompatActivity implements ProductD
 
     @OnClick(R.id.btn_rate)
     public void rateClick() {
-
+        Intent intent=new Intent(ProductDetailActivity.this,RatingBarActivity.class);
+        intent.putExtra("Title",title);
+        intent.putExtra("main_image_url",main_image_url);
+        startActivity(intent);
     }
 
     @OnClick(R.id.btn_buy)
@@ -107,7 +109,8 @@ public class ProductDetailActivity extends AppCompatActivity implements ProductD
 
     @Override
     public void setData(SingleProductDetails res) {
-        toolbar_title.setText(res.getData().getName());
+        title=res.getData().getName();
+        toolbar_title.setText(title);
         txt_product_name.setText(res.getData().getName());
         txt_category.setText("Category - " + SPManager.getInstance(getApplicationContext()).retriveString("Product_category"));
         txt_make.setText(res.getData().getProducer());
@@ -118,15 +121,15 @@ public class ProductDetailActivity extends AppCompatActivity implements ProductD
         setRecyclerView();
         ratingBar.setNumStars(5);
         ratingBar.setRating(res.getData().getRating());
+        main_image_url=res.getData().getProductImages().get(0).getImage();
         Glide.with(getApplicationContext())
-                .load(res.getData().getProductImages().get(0).getImage())
+                .load(main_image_url)
                 .placeholder(R.drawable.placeholder)
                 .into(img_product);
     }
 
     @Override
     public void getImageString(String image_url) {
-
         Glide.with(ProductDetailActivity.this)
                 .load(image_url)
                 .placeholder(R.drawable.placeholder)

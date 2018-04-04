@@ -29,39 +29,6 @@ public class SignUpPresenterImplementation implements SignupPresenter {
         this.signUpView = signUpView;
     }
 
-//    private void sendNetwokRequest(String name, String lastname, String email, String password, String confirm_password, String gender, int phone_number) {
-//
-//        Retrofit.Builder builder = new Retrofit.Builder()
-//                .baseUrl(APIClient.BaseURL)
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .client(getInterceptor().build());
-//
-//        Retrofit retrofit = builder.build();
-//        //get client and call object for the request
-//        APIClient apiClient = retrofit.create(APIClient.class);
-//        Call<Example> call = apiClient.createAccount(name, lastname, email, password, confirm_password, gender, phone_number);
-//        call.enqueue(new Callback<Example>() {
-//            @Override
-//            public void onResponse(Call<Example> call, Response<Example> response) {
-//                Example response1 = response.body();
-//                if (response.isSuccessful()) {
-//                    signUpView.success(response1.getMessage());
-//                    Log.e(TAG, "onResponse: "+response1.getMessage());
-//                } else {
-//                    signUpView.error(response1.getMessage());
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<Example> call, Throwable t) {
-//                Log.e(TAG, "onFailure: " + t.getMessage());
-//                signUpView.error(t.getMessage());
-//
-//            }
-//        });
-//
-//    }
-
 
     @Override
     public void preformSignUp(String name, String lastname, String email, String password, String confirm_password, String gender, int phone_number) {
@@ -78,6 +45,7 @@ public class SignUpPresenterImplementation implements SignupPresenter {
                 if(res != null){
                     Log.e(TAG, "onResponse LoginView: "+res.getMessage());
                     signUpView.success(res.getMessage());
+
                 }
 
             }
