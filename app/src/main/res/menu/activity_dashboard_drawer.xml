@@ -7,45 +7,53 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_cart"
-            android:icon="@drawable/office_chair"
+            android:icon="@drawable/shopping_cart"
             android:title="My Cart"
             app:actionLayout="@layout/menu_cart"/>
         <item
-            android:id="@+id/nav_chairs"
-            android:icon="@drawable/office_chair"
-            android:title="Chairs"
-           />
+            android:id="@+id/nav_tables"
+            android:icon="@drawable/table_icon"
+            android:title="Tables"
 
-        <item
-            android:id="@+id/nav_logout"
-            android:icon="@drawable/shopping"
-            android:title="Logout" />
-        <item
-            android:id="@+id/nav_cupboard"
-            android:icon="@drawable/shopping"
-            android:title="Cupboard" />
+            />
         <item
             android:id="@+id/nav_sofas"
-            android:icon="@drawable/shopping"
-            android:title="Sofas" />
+            android:icon="@drawable/sofa_icon"
+            android:title="Sofas"
+            />
+        <item
+            android:id="@+id/nav_chairs"
+            android:icon="@drawable/chair_icon"
+            android:title="Chairs"
+
+
+           />
+        <item
+            android:id="@+id/nav_cupboard"
+            android:icon="@drawable/cupboard"
+            android:title="Cupboard"
+            />
+
         <item
             android:id="@+id/nav_myAccout"
-            android:icon="@drawable/shopping"
-            android:title="My Account" />
+            android:icon="@drawable/account"
+            android:title="My Account"
+            />
         <item
             android:id="@+id/nav_storeLocators"
-            android:icon="@drawable/shopping"
-            android:title="Store Locators" />
-        <item
-            android:id="@+id/nav_tables"
-            android:icon="@drawable/shopping"
-            android:title="Tables" />
+            android:icon="@drawable/store_locator"
+            android:title="Store Locators"
+            />
         <item
             android:id="@+id/nav_my_orders"
-            android:icon="@drawable/shopping"
-            android:title="My Orders" />
-
-
+            android:icon="@drawable/order"
+            android:title="My Orders"
+            />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/logout"
+            android:title="Logout"
+            />
     </group>
 
 

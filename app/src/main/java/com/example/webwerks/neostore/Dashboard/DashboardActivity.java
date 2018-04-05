@@ -1,5 +1,8 @@
 package com.example.webwerks.neostore.Dashboard;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -16,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.webwerks.neostore.MyAccount.MyAccountFragment;
 import com.example.webwerks.neostore.ProductListing.ProductListingActivity;
 import com.example.webwerks.neostore.R;
 import com.example.webwerks.neostore.Utils.SPManager;
@@ -221,6 +225,13 @@ public class DashboardActivity extends AppCompatActivity
         } else if (id == R.id.nav_sofas) {
         } else if (id == R.id.nav_my_orders) {
         } else if (id == R.id.nav_myAccout) {
+
+
+            MyAccountFragment myAccountFragment = new MyAccountFragment();
+
+            getSupportFragmentManager().beginTransaction().add(R.id.drawer_layout, myAccountFragment, "HELLO").commit();
+
+
         } else if (id == R.id.nav_storeLocators) {
         } else if (id == R.id.nav_tables) {
         }

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+    tools:context="com.example.webwerks.neostore.MyAccount.MyAccountFragment">
+
+    <include
+        android:id="@+id/appbar"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appbar"
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:paddingTop="5dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_image"
+            android:layout_width="400px"
+            android:layout_height="400px"
+            android:layout_gravity="center"
+            android:src="@drawable/shopping"
+            app:civ_border_color="@color/colorAccent"
+            app:civ_border_width="2dp" />
+
+        <TextView
+            android:id="@+id/name"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:background="@drawable/border"
+            android:drawableLeft="@drawable/account"
+            android:fontFamily="@font/gothammedium"
+            android:text="@string/first_name"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/last_name"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/border"
+            android:drawableLeft="@drawable/account"
+            android:fontFamily="@font/gothammedium"
+            android:gravity="center"
+            android:text="@string/last_name"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/email"
+            android:textSize="16sp"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/border"
+            android:drawableLeft="@drawable/email"
+            android:fontFamily="@font/gothammedium"
+            android:gravity="center"
+
+            android:text="@string/email"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent" />
+
+
+        <TextView
+            android:id="@+id/phone_number"
+            android:textSize="16sp"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/border"
+            android:drawableLeft="@drawable/phone"
+            android:fontFamily="@font/gothammedium"
+            android:text="@string/phone"
+            android:gravity="center"
+            android:inputType="number"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/birthday"
+            android:textSize="16sp"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:background="@drawable/border"
+            android:drawableLeft="@drawable/birthday"
+            android:fontFamily="@font/gothammedium"
+            android:text="@string/birthday"
+             android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent" />
+
+
+        <Button
+            android:id="@+id/edit_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/button_white"
+            android:fontFamily="@font/gothammedium"
+            android:text="@string/edit_profile"
+            android:textAlignment="center"
+
+            android:textColor="@color/colorPrimary"
+            android:textSize="40px" />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorAccent"
+        android:fontFamily="@font/gothammedium"
+        android:textAlignment="center"
+
+        android:text="@string/reset_password"
+        android:textColor="@color/colorPrimary" />
+</RelativeLayout>

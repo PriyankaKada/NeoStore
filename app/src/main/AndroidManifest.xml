@@ -37,11 +37,15 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             >
         </activity>
-        <activity android:name=".ProductDetail.ProductDetailActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-        <activity android:name=".Rating.RatingBarActivity"
+        <activity
+            android:name=".ProductDetail.ProductDetailActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Rating.RatingBarActivity"
             android:theme="@style/AppTheme.CustomTheme"
-            tools:ignore="InnerclassSeparator"></activity>
+            tools:ignore="InnerclassSeparator" />
+        <activity android:name=".MyAccount.MyAccountActivity"
+            android:theme="@style/AppTheme_noActionBar"></activity>
     </application>
 
 </manifest>

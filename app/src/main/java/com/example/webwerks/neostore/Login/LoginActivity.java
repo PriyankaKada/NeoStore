@@ -45,10 +45,10 @@ public class LoginActivity extends Activity implements LoginView {
             loginPresenter = new LoginPresenterImplementation(LoginActivity.this
                     , SPManager.getInstance(this)
             );
-        } else {
-            Intent intent = new Intent(this, DashboardActivity.class);
-            startActivity(intent);
-        }
+            } else {
+                Intent intent = new Intent(this, DashboardActivity.class);
+                startActivity(intent);
+            }
     }
 
     private boolean firstTimeCheck() {

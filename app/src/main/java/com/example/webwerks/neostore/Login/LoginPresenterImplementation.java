@@ -90,6 +90,7 @@ public class LoginPresenterImplementation implements LoginPresenter {
         String created = res.getData().getCreated();
         String modified = res.getData().getModified();
         String access_token = res.getData().getAccessToken();
+        Log.e("access_token",res.getData().getAccessToken());
         String message = res.getMessage();
         String user_msg = res.getUserMsg();
 
