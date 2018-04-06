@@ -103,6 +103,7 @@ public class LoginActivity extends Activity implements LoginView {
     public void performSignUp() {
         Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
         startActivity(intent);
+        finish();
     }
 
     @Override
@@ -114,12 +115,18 @@ public class LoginActivity extends Activity implements LoginView {
     public void forgotPassword() {
         Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
         startActivity(intent);
+        finish();
     }
 
     @Override
     public void startNewActivity() {
         Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
         startActivity(intent);
+        finish();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

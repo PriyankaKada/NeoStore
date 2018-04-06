@@ -119,6 +119,7 @@ public class SignUpActivity extends Activity implements SignupView {
     public void performSignUp() {
         getDatafromEdittext();
         signUpPresenter.preformSignUp(name, last_name, email, password,conf_password, gender, phone_no);
+        finish();
     }
 
     @Override

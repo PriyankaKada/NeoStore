@@ -1,10 +1,13 @@
 package com.example.webwerks.neostore.Remote;
 
 import com.example.webwerks.neostore.Login.forgotPassword.ForgotPasswordModel;
+import com.example.webwerks.neostore.MyAccount.Model.UserDetails;
+import com.example.webwerks.neostore.MyAccount.Model.UserDetailsUpdates;
 import com.example.webwerks.neostore.ProductDetail.SingleProductDetails;
 import com.example.webwerks.neostore.ProductListing.ProductDatail;
 
 import com.example.webwerks.neostore.Rating.Rating;
+import com.example.webwerks.neostore.ResetPassword.ResetPassword;
 import com.example.webwerks.neostore.Utils.AppConstants;
 import com.example.webwerks.neostore.SignUp.Example;
 
@@ -80,6 +83,16 @@ public class RetroHelper {
         Call<Rating> call = apiService.setRatings(product_id,ratings);
         networkCall(call, responseListener);
     }
+    public void getUserProfileData(String access_token, ResponseListener responseListener) {
+        Call<UserDetails> call = apiService.getUserProfileDetails(access_token);
+        networkCall(call, responseListener);
+    }
+    public void submitUserProfileData(String access_token,String first_name,String last_name,String email,String dob,String phone_no,String profile_pic, ResponseListener responseListener) {
+        Call<UserDetailsUpdates> call = apiService.submitUserProfileDetails(access_token,first_name,last_name,email,dob,phone_no,profile_pic);
+        networkCall(call, responseListener);
+    }
+
+
 
 
 
@@ -97,4 +110,8 @@ public class RetroHelper {
     }
 
 
+    public void resetPassword(String access_token, String old_password, String password, String confirm_password, ResponseListener responseListener) {
+        Call<ResetPassword> call = apiService.resetPassword(access_token,old_password,password,confirm_password);
+        networkCall(call, responseListener);
+    }
 }

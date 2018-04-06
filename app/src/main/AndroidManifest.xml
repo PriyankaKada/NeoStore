@@ -44,7 +44,10 @@
             android:name=".Rating.RatingBarActivity"
             android:theme="@style/AppTheme.CustomTheme"
             tools:ignore="InnerclassSeparator" />
-        <activity android:name=".MyAccount.MyAccountActivity"
+        <activity
+            android:name=".MyAccount.MyAccountActivity"
+            android:theme="@style/AppTheme_noActionBar" />
+        <activity android:name=".ResetPassword.ResetPasswordActivity"
             android:theme="@style/AppTheme_noActionBar"></activity>
     </application>
 

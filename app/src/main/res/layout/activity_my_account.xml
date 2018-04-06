@@ -32,9 +32,10 @@
             app:civ_border_color="@color/colorAccent"
             app:civ_border_width="2dp" />
 
-        <TextView
+        <EditText
             android:id="@+id/name"
             android:textSize="16sp"
+            android:padding="7dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -46,10 +47,10 @@
             android:textColor="@color/colorAccent"
             android:textColorHint="@color/colorAccent" />
 
-        <TextView
+        <EditText
             android:id="@+id/last_name"
             android:layout_width="match_parent"
-
+            android:padding="7dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:background="@drawable/border"
@@ -61,10 +62,10 @@
             android:textColorHint="@color/colorAccent"
             android:textSize="16sp" />
 
-        <TextView
+        <EditText
             android:id="@+id/email"
             android:textSize="16sp"
-
+            android:padding="7dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -79,10 +80,10 @@
             android:textColorHint="@color/colorAccent" />
 
 
-        <TextView
+        <EditText
             android:id="@+id/phone_number"
             android:textSize="16sp"
-
+            android:padding="7dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -95,10 +96,10 @@
             android:textColor="@color/colorAccent"
             android:textColorHint="@color/colorAccent" />
 
-        <TextView
+        <EditText
             android:id="@+id/birthday"
             android:textSize="16sp"
-
+            android:padding="7dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -123,6 +124,18 @@
 
             android:textColor="@color/colorPrimary"
             android:textSize="40px" />
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/button_white"
+            android:fontFamily="@font/gothammedium"
+            android:text="@string/submit"
+            android:textAlignment="center"
+android:visibility="gone"
+            android:textColor="@color/colorPrimary"
+            android:textSize="40px" />
 
     </LinearLayout>
 
@@ -133,7 +146,7 @@
         android:background="@color/colorAccent"
         android:fontFamily="@font/gothammedium"
         android:textAlignment="center"
-
+        android:id="@+id/btnReset"
         android:text="@string/reset_password"
         android:textColor="@color/colorPrimary" />
 </RelativeLayout>

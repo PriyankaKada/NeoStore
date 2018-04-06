@@ -1,10 +1,8 @@
 package com.example.webwerks.neostore.Dashboard;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.view.View;
@@ -18,7 +16,10 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.webwerks.neostore.Login.LoginActivity;
+import com.example.webwerks.neostore.MyAccount.MyAccountActivity;
 import com.example.webwerks.neostore.MyAccount.MyAccountFragment;
 import com.example.webwerks.neostore.ProductListing.ProductListingActivity;
 import com.example.webwerks.neostore.R;
@@ -57,6 +58,7 @@ public class DashboardActivity extends AppCompatActivity
     MyCustomPagerAdapter myCustomPagerAdapter;
     private int dotscount;
     private ImageView[] dots;
+    DashboardPresenter dashboardPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,36 +82,40 @@ public class DashboardActivity extends AppCompatActivity
 
     @OnClick(R.id.ll_table)
     public void tableClicked() {
-       category_id=1;
-       SPManager.getInstance(getApplicationContext()).saveInt("Product_category_id",category_id);
-        SPManager.getInstance(getApplicationContext()).saveString("Product_category","Table");
+        category_id = 1;
+        SPManager.getInstance(getApplicationContext()).saveInt("Product_category_id", category_id);
+        SPManager.getInstance(getApplicationContext()).saveString("Product_category", "Table");
         openAnothorActivity(SPManager.getInstance(getApplicationContext()).retriveString("Product_category"));
 
 
     }
+
     @OnClick(R.id.ll_chair)
     public void chairClicked() {
-        category_id=2;
-        SPManager.getInstance(getApplicationContext()).saveInt("Product_category_id",category_id);
-        SPManager.getInstance(getApplicationContext()).saveString("Product_category","Chair");
+        category_id = 2;
+        SPManager.getInstance(getApplicationContext()).saveInt("Product_category_id", category_id);
+        SPManager.getInstance(getApplicationContext()).saveString("Product_category", "Chair");
         openAnothorActivity(SPManager.getInstance(getApplicationContext()).retriveString("Product_category"));
 
 
     }
+
     @OnClick(R.id.ll_sofa)
     public void sofaClicked() {
-        category_id=3;
-        SPManager.getInstance(getApplicationContext()).saveInt("Product_category_id",category_id);
-        SPManager.getInstance(getApplicationContext()).saveString("Product_category","Sofa");
+        category_id = 3;
+        SPManager.getInstance(getApplicationContext()).saveInt("Product_category_id", category_id);
+        SPManager.getInstance(getApplicationContext()).saveString("Product_category", "Sofa");
         openAnothorActivity(SPManager.getInstance(getApplicationContext()).retriveString("Product_category"));
 
 
     }
+
+
     @OnClick(R.id.ll_cupboard)
     public void cupboardClicked() {
-        category_id=4;
-        SPManager.getInstance(getApplicationContext()).saveInt("Product_category_id",category_id);
-        SPManager.getInstance(getApplicationContext()).saveString("Product_category","Cupboard");
+        category_id = 4;
+        SPManager.getInstance(getApplicationContext()).saveInt("Product_category_id", category_id);
+        SPManager.getInstance(getApplicationContext()).saveString("Product_category", "Cupboard");
         openAnothorActivity(SPManager.getInstance(getApplicationContext()).retriveString("Product_category"));
 
 
@@ -167,7 +173,7 @@ public class DashboardActivity extends AppCompatActivity
     @Override
     public void openAnothorActivity(String title) {
         Intent intent = new Intent(DashboardActivity.this, ProductListingActivity.class);
-        intent.putExtra("Title",title);
+        intent.putExtra("Title", title);
         startActivity(intent);
     }
 
@@ -201,14 +207,24 @@ public class DashboardActivity extends AppCompatActivity
         tv_email.setText(SPManager.getInstance(this).retriveString("email"));
     }
 
+    private Boolean exit = false;
+
     @Override
     public void onBackPressed() {
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }
+
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//***Change Here***
+        startActivity(intent);
+        finish();
+        System.exit(0);
     }
 
 
@@ -218,23 +234,46 @@ public class DashboardActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         if (id == R.id.nav_cart) {
-            // Handle the camera action
+
         } else if (id == R.id.nav_chairs) {
+            category_id = 2;
+            SPManager.getInstance(getApplicationContext()).saveInt("Product_category_id", category_id);
+            SPManager.getInstance(getApplicationContext()).saveString("Product_category", "Chair");
+            openAnothorActivity(SPManager.getInstance(getApplicationContext()).retriveString("Product_category"));
         } else if (id == R.id.nav_logout) {
+            SPManager.getInstance(this).saveBoolean("is_active", false);
+            Intent intent = new Intent(DashboardActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+
         } else if (id == R.id.nav_cupboard) {
+            category_id = 4;
+            SPManager.getInstance(getApplicationContext()).saveInt("Product_category_id", category_id);
+            SPManager.getInstance(getApplicationContext()).saveString("Product_category", "Cupboard");
+            openAnothorActivity(SPManager.getInstance(getApplicationContext()).retriveString("Product_category"));
+
         } else if (id == R.id.nav_sofas) {
+            category_id = 3;
+            SPManager.getInstance(getApplicationContext()).saveInt("Product_category_id", category_id);
+            SPManager.getInstance(getApplicationContext()).saveString("Product_category", "Sofa");
+            openAnothorActivity(SPManager.getInstance(getApplicationContext()).retriveString("Product_category"));
+
         } else if (id == R.id.nav_my_orders) {
         } else if (id == R.id.nav_myAccout) {
-
-
-            MyAccountFragment myAccountFragment = new MyAccountFragment();
-
-            getSupportFragmentManager().beginTransaction().add(R.id.drawer_layout, myAccountFragment, "HELLO").commit();
+            Intent intent = new Intent(DashboardActivity.this, MyAccountActivity.class);
+            startActivity(intent);
+//            MyAccountFragment myAccountFragment = new MyAccountFragment();
+//            getSupportFragmentManager().beginTransaction().add(R.id.drawer_layout, myAccountFragment, "HELLO").commit();
 
 
         } else if (id == R.id.nav_storeLocators) {
         } else if (id == R.id.nav_tables) {
+            category_id = 1;
+            SPManager.getInstance(getApplicationContext()).saveInt("Product_category_id", category_id);
+            SPManager.getInstance(getApplicationContext()).saveString("Product_category", "Table");
+            openAnothorActivity(SPManager.getInstance(getApplicationContext()).retriveString("Product_category"));
         }
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
