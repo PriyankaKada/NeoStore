@@ -21,22 +21,25 @@ public class ResetPasswordPresenterImplementation implements ResetPasswordPresen
     ResetPasswordView resetPasswordView;
 
     public ResetPasswordPresenterImplementation(ResetPasswordView resetPasswordView) {
-   this.resetPasswordView=resetPasswordView;
+        this.resetPasswordView = resetPasswordView;
     }
 
     @Override
     public void changePassword(String access_token, String old_password, String password, String confirm_password) {
-        sendNetwokRequest(access_token,old_password,password,confirm_password);
+        resetPasswordView.showProgressBar();
+        sendNetwokRequest(access_token, old_password, password, confirm_password);
 
     }
-    private void sendNetwokRequest(String access_token,String old_password,String password,String confirm_password) {
-        RetroHelper.getInstance().resetPassword(access_token,old_password,password,confirm_password, new ResponseListener() {
+
+    private void sendNetwokRequest(String access_token, String old_password, String password, String confirm_password) {
+        RetroHelper.getInstance().resetPassword(access_token, old_password, password, confirm_password, new ResponseListener() {
             @Override
             public void onResponseSuccess(Response baseResponse) {
                 res = (ResetPassword) baseResponse.body();
 
-                if(res != null){
+                if (res != null) {
                     resetPasswordView.showSuccess(res.getUserMsg());
+                    resetPasswordView.hideProgressBar();
 
                 }
 

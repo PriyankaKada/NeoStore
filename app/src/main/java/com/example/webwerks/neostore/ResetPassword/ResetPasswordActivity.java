@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +30,10 @@ public class ResetPasswordActivity extends AppCompatActivity implements ResetPas
     TextView toolbar_title;
     @BindView(R.id.imgback)
     ImageView imgback;
+
+    @BindView(R.id.progressBar_cyclic)
+    ProgressBar progressBar;
+
     ResetPasswordPresenter resetPasswordPresenter;
 
     @Override
@@ -47,9 +52,17 @@ public class ResetPasswordActivity extends AppCompatActivity implements ResetPas
 
 
     }
-
+    @Override
+    public void showProgressBar() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+    @Override
+    public void hideProgressBar() {
+        progressBar.setVisibility(View.GONE);
+    }
     @OnClick(R.id.btnReset)
     public void btn_resetClick() {
+
         resetPasswordPresenter.changePassword(SPManager.getInstance(getApplicationContext()).retriveString("access_token"),
                 current_password.getText().toString().trim(),
                 new_password.getText().toString().trim(),

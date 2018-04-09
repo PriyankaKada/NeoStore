@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,7 +41,8 @@ public class ProductListingActivity extends AppCompatActivity implements Product
     ImageView imgback;
     @BindView(R.id.toolbar_title)
     TextView toolbar_title;
-
+    @BindView(R.id.progressBar_cyclic)
+    ProgressBar progressBar;
 
     private ProductAdapter adapter;
     private ProductListPresenter productListPresenter;
@@ -71,6 +73,14 @@ public class ProductListingActivity extends AppCompatActivity implements Product
         rec_product_listing.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         rec_product_listing.setLayoutManager(layoutManager);
+    }
+    @Override
+    public void showProgressBar() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+    @Override
+    public void hideProgressBar() {
+        progressBar.setVisibility(View.GONE);
     }
 
     @Override

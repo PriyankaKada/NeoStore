@@ -11,4 +11,6 @@ public interface ProductDetailsView {
     void setData(SingleProductDetails res);
 
     void getImageString(String image_url);
+    void showProgressBar();
+    void hideProgressBar();
 }

@@ -3,9 +3,11 @@ package com.example.webwerks.neostore.SignUp;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -35,6 +37,8 @@ public class SignUpActivity extends Activity implements SignupView {
     CheckBox terms_and_condtions;
     @BindView(R.id.btn_signup)
     Button btn_signup;
+    @BindView(R.id.progressBar_cyclic)
+    ProgressBar progressBar;
     String name, email, last_name, password, conf_password, gender;
     String TAG = "SignupActivity";
     int phone_no;
@@ -128,8 +132,15 @@ public class SignUpActivity extends Activity implements SignupView {
     }
 
     @Override
-    public void error(String message) {
-        Toast.makeText(SignUpActivity.this,message,Toast.LENGTH_LONG).show();
+    public void showProgressBar() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideProgressBar() {
+        progressBar.setVisibility(View.GONE);
 
     }
+
+
 }

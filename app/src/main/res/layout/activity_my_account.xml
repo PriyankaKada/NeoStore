@@ -34,29 +34,29 @@
 
         <EditText
             android:id="@+id/name"
-            android:textSize="16sp"
-            android:padding="7dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:gravity="center"
             android:background="@drawable/border"
             android:drawableLeft="@drawable/account"
             android:fontFamily="@font/gothammedium"
+            android:gravity="center"
+            android:padding="7dp"
             android:text="@string/first_name"
             android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorAccent" />
+            android:textColorHint="@color/colorAccent"
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/last_name"
             android:layout_width="match_parent"
-            android:padding="7dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:background="@drawable/border"
             android:drawableLeft="@drawable/account"
             android:fontFamily="@font/gothammedium"
             android:gravity="center"
+            android:padding="7dp"
             android:text="@string/last_name"
             android:textColor="@color/colorAccent"
             android:textColorHint="@color/colorAccent"
@@ -64,8 +64,6 @@
 
         <EditText
             android:id="@+id/email"
-            android:textSize="16sp"
-            android:padding="7dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -73,43 +71,45 @@
             android:drawableLeft="@drawable/email"
             android:fontFamily="@font/gothammedium"
             android:gravity="center"
+            android:inputType="textEmailAddress"
+            android:padding="7dp"
 
             android:text="@string/email"
-            android:inputType="textEmailAddress"
             android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorAccent" />
+            android:textColorHint="@color/colorAccent"
+            android:textSize="16sp" />
 
 
         <EditText
             android:id="@+id/phone_number"
-            android:textSize="16sp"
-            android:padding="7dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:background="@drawable/border"
             android:drawableLeft="@drawable/phone"
             android:fontFamily="@font/gothammedium"
-            android:text="@string/phone"
             android:gravity="center"
             android:inputType="number"
+            android:padding="7dp"
+            android:text="@string/phone"
             android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorAccent" />
+            android:textColorHint="@color/colorAccent"
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/birthday"
-            android:textSize="16sp"
-            android:padding="7dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:gravity="center"
             android:background="@drawable/border"
             android:drawableLeft="@drawable/birthday"
             android:fontFamily="@font/gothammedium"
+            android:gravity="center"
+            android:padding="7dp"
             android:text="@string/birthday"
-             android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorAccent" />
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="16sp" />
 
 
         <Button
@@ -124,6 +124,7 @@
 
             android:textColor="@color/colorPrimary"
             android:textSize="40px" />
+
         <Button
             android:id="@+id/btn_submit"
             android:layout_width="match_parent"
@@ -133,20 +134,34 @@
             android:fontFamily="@font/gothammedium"
             android:text="@string/submit"
             android:textAlignment="center"
-android:visibility="gone"
             android:textColor="@color/colorPrimary"
-            android:textSize="40px" />
+            android:textSize="40px"
+            android:visibility="gone" />
 
     </LinearLayout>
 
     <Button
+        android:id="@+id/btnReset"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/colorAccent"
         android:fontFamily="@font/gothammedium"
-        android:textAlignment="center"
-        android:id="@+id/btnReset"
         android:text="@string/reset_password"
+        android:textAlignment="center"
         android:textColor="@color/colorPrimary" />
+
+
+    <ProgressBar
+        android:id="@+id/progressBar_cyclic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:minWidth="50dp"
+        android:visibility="gone"
+        android:theme="@style/AppTheme.WhiteAccent"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+
 </RelativeLayout>

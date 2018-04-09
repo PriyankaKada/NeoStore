@@ -3,8 +3,10 @@ package com.example.webwerks.neostore.Dashboard;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.design.internal.NavigationMenuView;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.DividerItemDecoration;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,6 +17,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -59,7 +62,8 @@ public class DashboardActivity extends AppCompatActivity
     private int dotscount;
     private ImageView[] dots;
     DashboardPresenter dashboardPresenter;
-
+    @BindView(R.id.progressBar_cyclic)
+    ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +72,11 @@ public class DashboardActivity extends AppCompatActivity
         View headerView = navigationView.getHeaderView(0);
         full_name = (TextView) headerView.findViewById(R.id.full_name);
         tv_email = (TextView) headerView.findViewById(R.id.email);
+
+//        //Add divider between menu items
+//        NavigationMenuView navMenuView = (NavigationMenuView) navigationView.getChildAt(0);
+//        navMenuView.addItemDecoration(new DividerItemDecoration(DashboardActivity.this, DividerItemDecoration.VERTICAL));
+
         getdatafromSp();
         setSupportActionBar(toolbar);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -79,9 +88,18 @@ public class DashboardActivity extends AppCompatActivity
 
 
     }
+    @Override
+    public void showProgressBar() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+    @Override
+    public void hideProgressBar() {
+        progressBar.setVisibility(View.GONE);
+    }
 
     @OnClick(R.id.ll_table)
     public void tableClicked() {
+
         category_id = 1;
         SPManager.getInstance(getApplicationContext()).saveInt("Product_category_id", category_id);
         SPManager.getInstance(getApplicationContext()).saveString("Product_category", "Table");
@@ -96,8 +114,6 @@ public class DashboardActivity extends AppCompatActivity
         SPManager.getInstance(getApplicationContext()).saveInt("Product_category_id", category_id);
         SPManager.getInstance(getApplicationContext()).saveString("Product_category", "Chair");
         openAnothorActivity(SPManager.getInstance(getApplicationContext()).retriveString("Product_category"));
-
-
     }
 
     @OnClick(R.id.ll_sofa)
@@ -106,10 +122,7 @@ public class DashboardActivity extends AppCompatActivity
         SPManager.getInstance(getApplicationContext()).saveInt("Product_category_id", category_id);
         SPManager.getInstance(getApplicationContext()).saveString("Product_category", "Sofa");
         openAnothorActivity(SPManager.getInstance(getApplicationContext()).retriveString("Product_category"));
-
-
     }
-
 
     @OnClick(R.id.ll_cupboard)
     public void cupboardClicked() {
@@ -117,8 +130,6 @@ public class DashboardActivity extends AppCompatActivity
         SPManager.getInstance(getApplicationContext()).saveInt("Product_category_id", category_id);
         SPManager.getInstance(getApplicationContext()).saveString("Product_category", "Cupboard");
         openAnothorActivity(SPManager.getInstance(getApplicationContext()).retriveString("Product_category"));
-
-
     }
 
 

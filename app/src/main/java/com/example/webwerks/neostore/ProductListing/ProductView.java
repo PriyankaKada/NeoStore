@@ -11,7 +11,8 @@ public interface ProductView {
      void successMessage(String message);
      void getDataFromURL(List<ProductData> list);
      void setTitle();
-
+     void showProgressBar();
+     void hideProgressBar();
 
 
 }

@@ -34,6 +34,7 @@ public class ProductPresenterImplementation implements ProductListPresenter {
 
     @Override
     public void getProductData() {
+        productView.showProgressBar();
         int category_id = instance.retriveInt("Product_category_id", 1);
         networkcall(category_id);
 
@@ -50,6 +51,7 @@ public class ProductPresenterImplementation implements ProductListPresenter {
                         Log.e(TAG, "onResponse LoginView Success: " + "Success");
                         productDataList= res.getData();
                         productView.getDataFromURL(productDataList);
+                        productView.hideProgressBar();
 
                     } else {
                         productView.successMessage("Failed status null");

@@ -39,4 +39,13 @@
         <item name="android:fontFamily">@font/gothammedium</item>
     </style>
 
+    <style name="AppTheme.WhiteAccent" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+    <style name="AppTheme.Primary" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/colorPrimary</item>
+
+    </style>
+
 </resources>

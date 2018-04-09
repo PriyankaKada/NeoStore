@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.webwerks.neostore.MyAccount.Model.UserDetails;
@@ -33,7 +34,8 @@ public class MyAccountFragment extends Fragment implements MyAccountView {
     TextView birthday;
     @BindView(R.id.profile_image)
     ImageView profile_image;
-
+    @BindView(R.id.progressBar_cyclic)
+    ProgressBar progressBar;
     MyAccountPresenter myAccountPresenter;
 
     public MyAccountFragment() {
@@ -53,6 +55,14 @@ public class MyAccountFragment extends Fragment implements MyAccountView {
 
         myAccountPresenter.getDataFromAPI(SPManager.getInstance(getActivity().getApplicationContext()).retriveString("access_token"));
         return view;
+    }
+    @Override
+    public void showProgressBar() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+    @Override
+    public void hideProgressBar() {
+        progressBar.setVisibility(View.GONE);
     }
 
     @Override

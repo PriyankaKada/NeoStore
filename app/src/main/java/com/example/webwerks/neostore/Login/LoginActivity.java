@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,7 +36,8 @@ public class LoginActivity extends Activity implements LoginView {
     LoginPresenter loginPresenter;
     String username, password;
     Handler handler;
-
+    @BindView(R.id.progressBar_cyclic)
+    ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -128,5 +131,15 @@ public class LoginActivity extends Activity implements LoginView {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+    }
+    @Override
+    public void showProgressBar() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideProgressBar() {
+        progressBar.setVisibility(View.GONE);
+
     }
 }

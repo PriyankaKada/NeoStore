@@ -35,6 +35,7 @@ public class LoginPresenterImplementation implements LoginPresenter {
 
     @Override
     public void preformLogin(String username, String password) {
+        loginView.showProgressBar();
         networkcall(username, password);
     }
 
@@ -55,6 +56,7 @@ public class LoginPresenterImplementation implements LoginPresenter {
                                 // this will run in the main thread
                             }
                         });
+                        loginView.hideProgressBar();
 
                     } else {
                         loginView.loginSuccess(res.getMessage());

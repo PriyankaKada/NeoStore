@@ -28,12 +28,15 @@ MyAccountView myAccountView;
 
     @Override
     public void getDataFromAPI(String access_token) {
+        myAccountView.showProgressBar();
         sendNetwokRequest(access_token);
 
     }
 
     @Override
     public void submitProfileData(String access_token,String first_name, String last_name, String email, String dob, String phone_no, String profile_pic) {
+        myAccountView.showProgressBar();
+
         sentDatatoApi(access_token, first_name,last_name, email,  dob,  phone_no,  profile_pic);
     }
 
@@ -45,7 +48,7 @@ MyAccountView myAccountView;
 
                 if(res_updates != null){
                     myAccountView.showMessage(res_updates.getUserMsg());
-//                    myAccountView.setdata(res);
+                    myAccountView.hideProgressBar();
 
 
                 }
@@ -54,7 +57,7 @@ MyAccountView myAccountView;
 
             @Override
             public void onResponseFailure(Throwable throwable) {
-
+                myAccountView.hideProgressBar();
                 Log.e(TAG, "onResponse: Response Updates" + res_updates.getStatus());
             }
         });
@@ -70,14 +73,14 @@ MyAccountView myAccountView;
 
                 if(res != null){
                 myAccountView.setdata(res);
-
+                    myAccountView.hideProgressBar();
                 }
 
             }
 
             @Override
             public void onResponseFailure(Throwable throwable) {
-
+                myAccountView.hideProgressBar();
                 Log.e(TAG, "onResponse: Response" + res.getStatus());
             }
         });

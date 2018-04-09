@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.DisplayMetrics;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,7 +32,8 @@ public class RatingBarActivity extends Activity implements RatingView{
     @BindView(R.id.img_product)
     ImageView imageView;
     RatingPresenter ratingPresenter;
-
+    @BindView(R.id.progressBar_cyclic)
+    ProgressBar progressBar;
     @BindView(R.id.btn_rate)
     Button btn_rate;
     @Override
@@ -45,6 +48,7 @@ public class RatingBarActivity extends Activity implements RatingView{
     }
     @OnClick(R.id.btn_rate)
     public void rateClick() {
+
         ratingPresenter.submitRatings(Integer.toString(SPManager.getInstance(getApplicationContext()).retriveInt("product_id", 1)), (int) Ratingbar.getRating());
     }
 
@@ -73,5 +77,13 @@ public class RatingBarActivity extends Activity implements RatingView{
     @Override
     public void showSuccess(String message) {
         Toast.makeText(getApplicationContext(),message,Toast.LENGTH_LONG).show();
+    }
+    @Override
+    public void showProgressBar() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+    @Override
+    public void hideProgressBar() {
+        progressBar.setVisibility(View.GONE);
     }
 }

@@ -6,4 +6,6 @@ package com.example.webwerks.neostore.Rating;
 
 public interface RatingView {
     void showSuccess(String message);
+    void showProgressBar();
+    void hideProgressBar();
 }

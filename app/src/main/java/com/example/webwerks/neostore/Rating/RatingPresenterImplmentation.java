@@ -24,6 +24,7 @@ public class RatingPresenterImplmentation implements RatingPresenter {
 
     @Override
     public void submitRatings(String product_id,int ratings) {
+    ratingView.showProgressBar();
     sendNetwokRequest(product_id,ratings);
     }
 
@@ -35,6 +36,7 @@ public class RatingPresenterImplmentation implements RatingPresenter {
 
                 if(res != null){
                     ratingView.showSuccess(res.getUserMsg());
+                    ratingView.showProgressBar();
 
                 }
 

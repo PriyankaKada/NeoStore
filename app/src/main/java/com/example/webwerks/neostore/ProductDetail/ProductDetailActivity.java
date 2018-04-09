@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -63,7 +64,8 @@ public class ProductDetailActivity extends AppCompatActivity implements ProductD
     List<ProductImage> images;
     ProductDetailPresenter productDetailPresenter;
     private ProductImagesAdapter productImagesAdapter;
-
+    @BindView(R.id.progressBar_cyclic)
+    ProgressBar progressBar;
     String main_image_url,title,product_id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +81,14 @@ public class ProductDetailActivity extends AppCompatActivity implements ProductD
                 finish();
             }
         });
+    }
+    @Override
+    public void showProgressBar() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+    @Override
+    public void hideProgressBar() {
+        progressBar.setVisibility(View.GONE);
     }
 
     private void setRecyclerView() {

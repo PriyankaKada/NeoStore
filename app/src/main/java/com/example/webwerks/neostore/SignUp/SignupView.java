@@ -8,5 +8,6 @@ public interface SignupView {
     void validateData();
     void performSignUp();
     void success(String message);
-    void error(String message);
+    void showProgressBar();
+    void hideProgressBar();
 }

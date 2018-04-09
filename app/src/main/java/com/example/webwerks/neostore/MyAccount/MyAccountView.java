@@ -9,5 +9,7 @@ import com.example.webwerks.neostore.MyAccount.Model.UserDetails;
 public interface MyAccountView {
     void setdata(UserDetails userDetails);
     void showMessage(String message);
+    void showProgressBar();
+    void hideProgressBar();
 
 }

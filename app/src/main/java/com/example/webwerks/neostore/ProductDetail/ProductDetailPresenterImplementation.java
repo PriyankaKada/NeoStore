@@ -22,6 +22,7 @@ public class ProductDetailPresenterImplementation implements ProductDetailPresen
 
     @Override
     public void getDatafromAPI(int product_id) {
+        productDetailsView.showProgressBar();
         networkcall(product_id);
     }
 
@@ -33,7 +34,7 @@ public class ProductDetailPresenterImplementation implements ProductDetailPresen
                 if (res != null) {
                     Log.e(TAG, "onResponseSuccess: "+"Res not null");
                     productDetailsView.setData(res);
-
+                    productDetailsView.hideProgressBar();
 
 
                 } else {

@@ -6,4 +6,5 @@ package com.example.webwerks.neostore.ResetPassword;
 
 public interface ResetPasswordView {
     void showSuccess(String userMsg);
-}
+    void showProgressBar();
+    void hideProgressBar();}

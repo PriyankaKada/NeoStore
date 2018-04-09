@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,6 +48,9 @@ public class MyAccountActivity extends AppCompatActivity implements MyAccountVie
     @BindView(R.id.toolbar_title)
     TextView toolbar_title;
 
+    @BindView(R.id.progressBar_cyclic)
+    ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,6 +84,16 @@ public class MyAccountActivity extends AppCompatActivity implements MyAccountVie
 
     }
 
+    @Override
+    public void showProgressBar() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideProgressBar() {
+        progressBar.setVisibility(View.GONE);
+    }
+
     @OnClick(R.id.edit_profile)
     public void profile_pic_Click() {
 
@@ -87,7 +101,7 @@ public class MyAccountActivity extends AppCompatActivity implements MyAccountVie
 
     @OnClick(R.id.btnReset)
     public void resetPasswordClick() {
-        Intent intent=new Intent(MyAccountActivity.this, ResetPasswordActivity.class);
+        Intent intent = new Intent(MyAccountActivity.this, ResetPasswordActivity.class);
         startActivity(intent);
 
     }
@@ -128,7 +142,7 @@ public class MyAccountActivity extends AppCompatActivity implements MyAccountVie
 
         String pro_pic_url = "http://www.beingmarathi.in/wp-content/uploads/2017/03/Priya.jpg";
 
-        Log.e("pro_pic_url", "setdata: "+pro_pic_url );
+        Log.e("pro_pic_url", "setdata: " + pro_pic_url);
 
         Glide.with(MyAccountActivity.this)
                 .load(pro_pic_url)

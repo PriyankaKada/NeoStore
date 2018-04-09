@@ -32,6 +32,7 @@ public class SignUpPresenterImplementation implements SignupPresenter {
 
     @Override
     public void preformSignUp(String name, String lastname, String email, String password, String confirm_password, String gender, int phone_number) {
+      signUpView.showProgressBar();
        sendNetwokRequest(name, lastname, email, password, confirm_password, gender, phone_number);
 
     }
@@ -45,6 +46,7 @@ public class SignUpPresenterImplementation implements SignupPresenter {
                 if(res != null){
                     Log.e(TAG, "onResponse LoginView: "+res.getMessage());
                     signUpView.success(res.getMessage());
+                    signUpView.hideProgressBar();
 
                 }
 

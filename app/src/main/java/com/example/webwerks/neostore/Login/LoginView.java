@@ -12,4 +12,6 @@ public interface LoginView {
     void forgotPassword();
     void startNewActivity();
     void performSignUp();
+    void showProgressBar();
+    void hideProgressBar();
 }
