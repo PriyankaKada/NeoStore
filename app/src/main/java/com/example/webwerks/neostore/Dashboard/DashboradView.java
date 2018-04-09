@@ -6,6 +6,6 @@ package com.example.webwerks.neostore.Dashboard;
 
 public interface DashboradView {
     void openAnothorActivity(String table);
-    void showProgressBar();
-    void hideProgressBar();
+//    void showProgressBar();
+//    void hideProgressBar();
 }
