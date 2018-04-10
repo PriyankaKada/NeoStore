@@ -19,16 +19,16 @@ import java.util.List;
  * Created by webwerks on 4/3/18.
  */
 
-public class ProductImagesAdapter extends RecyclerView.Adapter<ProductImagesAdapter.ProductImageViewHolder>{
+public class ProductImagesAdapter extends RecyclerView.Adapter<ProductImagesAdapter.ProductImageViewHolder> {
     private List<ProductImage> productImageList;
     Context mContext;
     ProductImage productImage;
     ProductDetailsView productDetailsView;
 
     public ProductImagesAdapter(Context mContext, List<ProductImage> productImageList, ProductDetailsView productDetailsView) {
-       this.mContext=mContext;
+        this.mContext = mContext;
         this.productImageList = productImageList;
-        this.productDetailsView=productDetailsView;
+        this.productDetailsView = productDetailsView;
     }
 
     @Override
@@ -43,9 +43,9 @@ public class ProductImagesAdapter extends RecyclerView.Adapter<ProductImagesAdap
     public void onBindViewHolder(ProductImageViewHolder holder, int position) {
         holder.itemView.setTag(position);
         productImage = productImageList.get(position);
-        String image_url=productImage.getImage();
+        String image_url = productImage.getImage();
 
-                Glide.with(mContext)
+        Glide.with(mContext)
                 .load(image_url)
                 .placeholder(R.drawable.placeholder)
                 .into(holder.imageView);
@@ -53,7 +53,7 @@ public class ProductImagesAdapter extends RecyclerView.Adapter<ProductImagesAdap
             @Override
             public void onClick(View v) {
                 productImage = productImageList.get((Integer) v.getTag());
-                String image_url=productImage.getImage();
+                String image_url = productImage.getImage();
                 productDetailsView.getImageString(image_url);
 //                v. setBackgroundResource(R.drawable.border_clicked);
 
@@ -69,13 +69,12 @@ public class ProductImagesAdapter extends RecyclerView.Adapter<ProductImagesAdap
     }
 
 
-
-
     public static class ProductImageViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
+
         public ProductImageViewHolder(View itemView) {
             super(itemView);
-            imageView=itemView.findViewById(R.id.product_image_recview);
+            imageView = itemView.findViewById(R.id.product_image_recview);
 
         }
     }

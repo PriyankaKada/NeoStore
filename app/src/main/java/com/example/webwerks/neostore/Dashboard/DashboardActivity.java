@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.example.webwerks.neostore.Login.LoginActivity;
 import com.example.webwerks.neostore.MyAccount.MyAccountActivity;
 import com.example.webwerks.neostore.MyAccount.MyAccountFragment;
+import com.example.webwerks.neostore.MyCart.MyCartActivity;
 import com.example.webwerks.neostore.ProductListing.ProductListingActivity;
 import com.example.webwerks.neostore.R;
 import com.example.webwerks.neostore.Utils.SPManager;
@@ -238,7 +239,10 @@ public class DashboardActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+
         if (id == R.id.nav_cart) {
+            Intent intent = new Intent(DashboardActivity.this, MyCartActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_chairs) {
             category_id = 2;

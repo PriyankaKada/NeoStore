@@ -47,7 +47,10 @@
         <activity
             android:name=".MyAccount.MyAccountActivity"
             android:theme="@style/AppTheme_noActionBar" />
-        <activity android:name=".ResetPassword.ResetPasswordActivity"
+        <activity
+            android:name=".ResetPassword.ResetPasswordActivity"
+            android:theme="@style/AppTheme_noActionBar" />
+        <activity android:name=".MyCart.MyCartActivity"
             android:theme="@style/AppTheme_noActionBar"></activity>
     </application>
 

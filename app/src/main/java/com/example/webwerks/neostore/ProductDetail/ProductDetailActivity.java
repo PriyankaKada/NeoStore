@@ -66,7 +66,8 @@ public class ProductDetailActivity extends AppCompatActivity implements ProductD
     private ProductImagesAdapter productImagesAdapter;
     @BindView(R.id.progressBar_cyclic)
     ProgressBar progressBar;
-    String main_image_url,title,product_id;
+    String main_image_url,title;
+        int product_id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,7 +106,9 @@ public class ProductDetailActivity extends AppCompatActivity implements ProductD
 
     @OnClick(R.id.btn_rate)
     public void rateClick() {
+
         Intent intent=new Intent(ProductDetailActivity.this,RatingBarActivity.class);
+        intent.putExtra("Mode","rate");
         intent.putExtra("Title",title);
         intent.putExtra("main_image_url",main_image_url);
         startActivity(intent);
@@ -114,11 +117,18 @@ public class ProductDetailActivity extends AppCompatActivity implements ProductD
     @OnClick(R.id.btn_buy)
     public void buyClick() {
 
+        Intent intent=new Intent(ProductDetailActivity.this,RatingBarActivity.class);
+        intent.putExtra("Mode","buy");
+        intent.putExtra("Title",title);
+        intent.putExtra("main_image_url",main_image_url);
+
+        startActivity(intent);
     }
 
 
     @Override
     public void setData(SingleProductDetails res) {
+        product_id=res.getData().getId();
         title=res.getData().getName();
         toolbar_title.setText(title);
         txt_product_name.setText(res.getData().getName());

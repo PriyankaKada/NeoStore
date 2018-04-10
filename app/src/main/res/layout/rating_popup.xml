@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/title"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:fontFamily="@font/gothammedium"
         android:gravity="center"
         android:text="Title"/>
@@ -38,6 +38,31 @@
         android:layout_marginLeft="20dp"
         android:rating="3"
         android:theme="@style/RatingBar" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Qty"
+        android:visibility="gone"
+        android:id="@+id/txt_qty"
+        android:textSize="16sp"
+        android:fontFamily="@font/gothammedium"
+        android:layout_gravity="center"
+     />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLength="3"
+        android:visibility="gone"
+        android:layout_marginRight="100dp"
+        android:layout_marginLeft="100dp"
+        android:hint="000"
+        android:inputType="number"
+        android:padding="5dp"
+        android:id="@+id/et_qty"
+        android:background="@drawable/border_red"
+        android:textAlignment="center"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center"/>
 
     <Button
         android:id="@+id/btn_rate"
@@ -51,6 +76,19 @@
         android:text="@string/rate_now"
         android:layout_marginBottom="10dp"
         android:textColor="@color/colorAccent" />
+    <Button
+        android:id="@+id/btn_add_to_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/rounded_corners_primary"
+        android:fontFamily="@font/gothambook"
+        android:text="@string/add_to_cart"
+        android:visibility="gone"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/colorAccent" />
 </LinearLayout>
     <ProgressBar
         android:id="@+id/progressBar_cyclic"
@@ -59,7 +97,7 @@
         android:minHeight="50dp"
         android:minWidth="50dp"
         android:visibility="gone"
-        android:theme="@style/AppTheme.WhiteAccent"
+        android:theme="@style/AppTheme.Primary"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>

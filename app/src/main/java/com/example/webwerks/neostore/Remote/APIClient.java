@@ -4,8 +4,10 @@ package com.example.webwerks.neostore.Remote;
 import com.example.webwerks.neostore.Login.forgotPassword.ForgotPasswordModel;
 import com.example.webwerks.neostore.MyAccount.Model.UserDetails;
 import com.example.webwerks.neostore.MyAccount.Model.UserDetailsUpdates;
+import com.example.webwerks.neostore.MyCart.Model.CartModel;
 import com.example.webwerks.neostore.ProductDetail.SingleProductDetails;
 import com.example.webwerks.neostore.ProductListing.ProductDatail;
+import com.example.webwerks.neostore.Rating.AddToCart;
 import com.example.webwerks.neostore.Rating.Rating;
 import com.example.webwerks.neostore.ResetPassword.ResetPassword;
 import com.example.webwerks.neostore.SignUp.Example;
@@ -76,4 +78,15 @@ public interface APIClient {
                                       @Field("old_password")String old_password,
                                       @Field("password")String password,
                                       @Field("confirm_password")String confirm_password);
+
+
+    @FormUrlEncoded
+    @POST("addToCart")
+    Call<AddToCart> addtocart(@Header("access_token") String access_token,
+                              @Field("product_id") int product_id,
+                              @Field("quantity")int quantity
+                             );
+
+    @GET("cart")
+    Call<CartModel> getCartItems(@Header("access_token") String access_token);
 }
