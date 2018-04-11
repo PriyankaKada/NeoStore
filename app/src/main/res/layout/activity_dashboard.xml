@@ -25,19 +25,6 @@
         app:itemTextColor="@color/colorAccent"
         app:itemTextAppearance="@style/NavigationDrawerStyle"
         app:menu="@menu/activity_dashboard_drawer" />
-    <!--<RelativeLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent">-->
-        <!--<ProgressBar-->
-            <!--android:id="@+id/progressBar_cyclic"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:minHeight="50dp"-->
-            <!--android:minWidth="50dp"-->
-            <!--android:visibility="gone"-->
-            <!--android:theme="@style/AppTheme.WhiteAccent"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:layout_centerHorizontal="true" />-->
-    <!--</RelativeLayout>-->
+
 
 </android.support.v4.widget.DrawerLayout>
