@@ -125,4 +125,14 @@ public class RetroHelper {
         networkCall(call, responseListener);
 
     }
+
+    public void deleterequest(String access_token, Integer productId, ResponseListener responseListener) {
+        Call<AddToCart> call = apiService.deletefromcart(access_token,productId);
+        networkCall(call, responseListener);
+    }
+
+    public void editcartrequest(String access_token, int productId, int selected_value, ResponseListener responseListener) {
+        Call<AddToCart> call = apiService.editcart(access_token,productId,selected_value);
+        networkCall(call, responseListener);
+    }
 }

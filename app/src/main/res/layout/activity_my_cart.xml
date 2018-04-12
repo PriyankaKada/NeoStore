@@ -21,18 +21,14 @@
 
     </android.support.v7.widget.RecyclerView>
 
-    <Button
-        android:id="@+id/order_now"
+
+    <TextView
+        android:id="@+id/empty_textview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rec_cart"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/rounded_corners_primary"
-        android:fontFamily="@font/gothambook"
-        android:text="@string/order_now" />
+        android:layout_height="match_parent"
+        android:text="Cart is Empty"
+        android:gravity="center"
+        android:visibility="gone"/>
 
     <ProgressBar
         android:id="@+id/progressBar_cyclic"

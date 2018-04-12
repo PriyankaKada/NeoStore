@@ -65,28 +65,40 @@ public interface APIClient {
     @FormUrlEncoded
     @POST("users/update")
     Call<UserDetailsUpdates> submitUserProfileDetails(@Header("access_token") String access_token,
-                                                      @Field("first_name") String first_name ,
-                                                      @Field("last_name") String last_name ,
-                                                      @Field("email") String email ,
+                                                      @Field("first_name") String first_name,
+                                                      @Field("last_name") String last_name,
+                                                      @Field("email") String email,
                                                       @Field("dob") String dob,
                                                       @Field("phone_no") String phone_no,
                                                       @Field("profile_pic") String profile_pic
-                                             );
+    );
+
     @FormUrlEncoded
     @POST("users/change")
     Call<ResetPassword> resetPassword(@Header("access_token") String access_token,
-                                      @Field("old_password")String old_password,
-                                      @Field("password")String password,
-                                      @Field("confirm_password")String confirm_password);
+                                      @Field("old_password") String old_password,
+                                      @Field("password") String password,
+                                      @Field("confirm_password") String confirm_password);
 
 
     @FormUrlEncoded
     @POST("addToCart")
     Call<AddToCart> addtocart(@Header("access_token") String access_token,
                               @Field("product_id") int product_id,
-                              @Field("quantity")int quantity
-                             );
+                              @Field("quantity") int quantity
+    );
 
     @GET("cart")
     Call<CartModel> getCartItems(@Header("access_token") String access_token);
+
+    @FormUrlEncoded
+    @POST("deleteCart")
+    Call<AddToCart> deletefromcart(@Header("access_token") String access_token,
+                                   @Field("product_id") Integer productId);
+
+    @FormUrlEncoded
+    @POST("editCart")
+    Call<AddToCart> editcart(@Header("access_token") String access_token,
+                             @Field("product_id") int product_id,
+                             @Field("quantity") int selected_value);
 }

@@ -5,7 +5,6 @@
     android:id="@+id/swipe_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-
     app:dragEdge="right"
     app:mode="same_level">
 
@@ -14,22 +13,24 @@
         android:layout_width="wrap_content"
         android:layout_height="270px"
 
+
         >
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
             android:layout_width="137px"
             android:layout_height="137px"
-            android:layout_marginLeft="40dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="0dp"
             android:layout_gravity="right|center_vertical"
             android:src="@color/colorPrimary"
 
             />
         <ImageView
-            android:id="@+id/cart_item_count"
+            android:id="@+id/delete_cart_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="8.2dp"
+            android:layout_marginRight="13.2dp"
             android:layout_marginLeft="40dp"
             android:paddingRight="3dp"
             android:src="@drawable/delete"

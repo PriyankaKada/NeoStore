@@ -13,4 +13,8 @@ public interface CartView {
     void showMessage(String s);
 
     void setData(CartModel res);
+
+    void refreshAdapter(int position);
+
+    void refreshAdapter();
 }

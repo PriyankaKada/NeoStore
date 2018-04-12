@@ -23,11 +23,24 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
         android:layout_alignParentRight="true"/>
-    <!--<View-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="1dp"-->
-        <!--android:layout_marginTop="5dp"-->
-        <!--android:layout_below="@id/total_price"-->
-        <!--android:background="@color/color_background"/>-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/view"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/total_price"
+        android:background="@color/color_background"/>
+    <Button
+        android:id="@+id/order_now"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_corners_primary"
+        android:fontFamily="@font/gothambook"
+        android:text="@string/order_now" />
 
 </RelativeLayout>

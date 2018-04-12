@@ -6,4 +6,8 @@ package com.example.webwerks.neostore.MyCart;
 
 public interface CartPresenter {
     void getCartDetails(String access_token);
+
+    void deleteCartItem(String access_token, int productId);
+
+    void editCart(String access_token, int productId, int selection);
 }

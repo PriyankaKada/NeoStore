@@ -58,16 +58,25 @@ public class RatingBarActivity extends Activity implements RatingView {
 
     @OnClick(R.id.btn_add_to_cart)
     public void add_cart_Click() {
-        ratingPresenter.addProductToCart(SPManager.getInstance(getApplicationContext()).retriveString("access_token")
-                , SPManager.getInstance(getApplicationContext()).retriveInt("product_id", 1)
-                , Integer.parseInt(et_quntity.getText().toString().trim()));
+        if (et_quntity.getText().toString().equals("")) {
+            Toast.makeText(getApplicationContext(),"Please enter Qualtity",Toast.LENGTH_LONG).show();
+
+        }else {
+            ratingPresenter.addProductToCart(SPManager.getInstance(getApplicationContext()).retriveString("access_token")
+                    , SPManager.getInstance(getApplicationContext()).retriveInt("product_id", 1)
+                    , Integer.parseInt(et_quntity.getText().toString().trim()));
+        }
 
     }
 
     @OnClick(R.id.btn_rate)
     public void rateClick() {
-        ratingPresenter.submitRatings(Integer.toString(SPManager.getInstance(getApplicationContext()).retriveInt("product_id", 1)), (int) Ratingbar.getRating());
+        if (et_quntity.getText().toString().equals("")) {
+            Toast.makeText(getApplicationContext(),"Please enter Qualtity",Toast.LENGTH_LONG).show();
 
+        }else {
+            ratingPresenter.submitRatings(Integer.toString(SPManager.getInstance(getApplicationContext()).retriveInt("product_id", 1)), (int) Ratingbar.getRating());
+        }
     }
 
     private void setUpDisplayMetrics() {
@@ -99,7 +108,7 @@ public class RatingBarActivity extends Activity implements RatingView {
             et_quntity.setVisibility(View.VISIBLE);
             Ratingbar.setVisibility(View.GONE);
             btn_rate.setVisibility(View.GONE);
-        }else {
+        } else {
             btn_add_to_cart.setVisibility(View.GONE);
             quntity.setVisibility(View.GONE);
             et_quntity.setVisibility(View.GONE);
