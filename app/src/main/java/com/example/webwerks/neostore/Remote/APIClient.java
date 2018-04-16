@@ -1,6 +1,7 @@
 package com.example.webwerks.neostore.Remote;
 
 
+import com.example.webwerks.neostore.Address.AddressListingModel;
 import com.example.webwerks.neostore.Login.forgotPassword.ForgotPasswordModel;
 import com.example.webwerks.neostore.MyAccount.Model.UserDetails;
 import com.example.webwerks.neostore.MyAccount.Model.UserDetailsUpdates;
@@ -101,4 +102,9 @@ public interface APIClient {
     Call<AddToCart> editcart(@Header("access_token") String access_token,
                              @Field("product_id") int product_id,
                              @Field("quantity") int selected_value);
+
+    @FormUrlEncoded
+    @POST("order")
+    Call<AddressListingModel> placeOrder(@Header("access_token") String access_token,
+                                         @Field("address") String address);
 }

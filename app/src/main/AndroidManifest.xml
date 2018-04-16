@@ -54,7 +54,10 @@
             android:name=".MyCart.MyCartActivity"
             android:theme="@style/AppTheme_noActionBar" />
         <activity android:name=".MyCart.test_activity" />
-        <activity android:name=".Address.AddAddressActivity"
+        <activity
+            android:name=".Address.AddAddressActivity"
+            android:theme="@style/AppTheme_noActionBar" />
+        <activity android:name=".Address.AddressListingActivity"
             android:theme="@style/AppTheme_noActionBar"></activity>
     </application>
 

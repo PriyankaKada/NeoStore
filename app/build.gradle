@@ -17,20 +17,6 @@ android {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
@@ -57,5 +43,10 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:3.7.0'
     //Picaso
     implementation 'com.squareup.picasso:picasso:2.71828'
+    //Swipe reveal delete operation
     implementation project(':swipe-reveal-layout')
+    //Room Database
+    implementation 'android.arch.persistence.room:runtime:1.0.0'
+    annotationProcessor 'android.arch.persistence.room:compiler:1.0.0'
+
 }

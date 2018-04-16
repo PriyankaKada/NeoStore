@@ -1,5 +1,6 @@
 package com.example.webwerks.neostore.Remote;
 
+import com.example.webwerks.neostore.Address.AddressListingModel;
 import com.example.webwerks.neostore.Login.forgotPassword.ForgotPasswordModel;
 import com.example.webwerks.neostore.MyAccount.Model.UserDetails;
 import com.example.webwerks.neostore.MyAccount.Model.UserDetailsUpdates;
@@ -95,6 +96,10 @@ public class RetroHelper {
     }
     public void requestcartItems(String access_token, ResponseListener responseListener) {
         Call<CartModel> call = apiService.getCartItems(access_token);
+        networkCall(call, responseListener);
+    }
+    public void placeOrder(String access_token,String address, ResponseListener responseListener) {
+        Call<AddressListingModel> call = apiService.placeOrder (access_token,address);
         networkCall(call, responseListener);
     }
 

@@ -1,5 +1,6 @@
 package com.example.webwerks.neostore.Dashboard;
 
+import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -22,6 +23,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.webwerks.neostore.Address.RoomDb.MyAddressDatabase;
 import com.example.webwerks.neostore.Login.LoginActivity;
 import com.example.webwerks.neostore.MyAccount.MyAccountActivity;
 import com.example.webwerks.neostore.MyAccount.MyAccountFragment;
@@ -65,12 +67,14 @@ public class DashboardActivity extends AppCompatActivity
     private int dotscount;
     private ImageView[] dots;
 
-
+    public static MyAddressDatabase myAddressDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
         ButterKnife.bind(this);
+        myAddressDatabase= Room.databaseBuilder(getApplicationContext(),MyAddressDatabase.class,"address_information").allowMainThreadQueries().build();
+
         View headerView = navigationView.getHeaderView(0);
         full_name = (TextView) headerView.findViewById(R.id.full_name);
         tv_email = (TextView) headerView.findViewById(R.id.email);

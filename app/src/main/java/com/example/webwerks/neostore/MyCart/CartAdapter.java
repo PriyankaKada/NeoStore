@@ -15,6 +15,9 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.webwerks.neostore.Address.AddAddressActivity;
+import com.example.webwerks.neostore.Address.AddressListingActivity;
+import com.example.webwerks.neostore.Address.RoomDb.Address;
+import com.example.webwerks.neostore.Dashboard.DashboardActivity;
 import com.example.webwerks.neostore.MyCart.Model.CartModel;
 import com.example.webwerks.neostore.MyCart.Model.Datum;
 import com.example.webwerks.neostore.ProductListing.ProductData;
@@ -79,8 +82,14 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
                 @Override
                 public void onClick(View view) {
 
-                    Intent intent = new Intent(context, AddAddressActivity.class);
-                    context.startActivity(intent);
+                    List<Address> addresses = DashboardActivity.myAddressDatabase.myDao().readAddress();
+                    if (addresses != null) {
+                        Intent intent = new Intent(context, AddressListingActivity.class);
+                        context.startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(context, AddAddressActivity.class);
+                        context.startActivity(intent);
+                    }
                 }
             });
 

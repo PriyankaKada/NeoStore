@@ -14,9 +14,11 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/gothammedium"
         android:text="Address"
-        android:textSize="20sp" />
+        android:textAllCaps="true"
+        android:textSize="18sp" />
 
     <EditText
+        android:id="@+id/address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -25,6 +27,7 @@
         android:fontFamily="@font/gothambook"
         android:hint="Address"
         android:maxLines="10"
+        android:padding="40dp"
         android:textColor="@color/colorAccent_sec_dark"
         android:textSize="18sp"
 
@@ -36,29 +39,27 @@
         android:layout_margin="10dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/gothammedium"
-        android:text="City"
-
-        android:textSize="20sp" />
+        android:text="Street Name"
+        android:textAllCaps="true"
+        android:textSize="18sp" />
 
     <EditText
+        android:id="@+id/street_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:background="@color/colorAccent"
         android:fontFamily="@font/gothambook"
-        android:hint="city"
+        android:hint="Street name"
+        android:padding="10dp"
         android:textColor="@color/colorAccent_sec_dark"
-
-        android:textSize="18sp"
-
-        />
+        android:textSize="18sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-
         android:orientation="horizontal"
         android:weightSum="2">
 
@@ -70,7 +71,8 @@
             android:layout_weight="1"
             android:fontFamily="@font/gothammedium"
             android:text="City"
-            android:textSize="20sp" />
+            android:textAllCaps="true"
+            android:textSize="18sp" />
 
         <TextView
             android:layout_width="0dp"
@@ -79,7 +81,8 @@
             android:layout_weight="1"
             android:fontFamily="@font/gothammedium"
             android:text="State"
-            android:textSize="20sp" />
+            android:textAllCaps="true"
+            android:textSize="18sp" />
 
     </LinearLayout>
 
@@ -91,6 +94,7 @@
         android:weightSum="2">
 
         <EditText
+            android:id="@+id/city"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="15dp"
@@ -98,18 +102,20 @@
             android:background="@color/colorAccent"
             android:fontFamily="@font/gothambook"
             android:hint="City"
+            android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/colorAccent_sec_dark"
-
             android:textSize="18sp" />
 
         <EditText
+            android:id="@+id/state"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/colorAccent"
             android:fontFamily="@font/gothambook"
             android:hint="State"
+            android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/colorAccent_sec_dark"
             android:textSize="18sp" />
@@ -154,6 +160,7 @@
         android:weightSum="2">
 
         <EditText
+            android:id="@+id/zip_code"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="15dp"
@@ -162,17 +169,21 @@
             android:fontFamily="@font/gothambook"
             android:hint="Zip Code"
             android:inputType="number"
+            android:padding="10dp"
+
             android:singleLine="true"
             android:textColor="@color/colorAccent_sec_dark"
             android:textSize="18sp" />
 
         <EditText
+            android:id="@+id/country"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/colorAccent"
             android:fontFamily="@font/gothambook"
             android:hint="Country"
+            android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/colorAccent_sec_dark"
             android:textSize="18sp" />
@@ -180,7 +191,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn_buy"
+        android:id="@+id/btn_saveAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
@@ -188,6 +199,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/rounded_corners_primary"
         android:fontFamily="@font/gothambook"
+        android:padding="10dp"
         android:text="@string/save_address"
         android:textColor="@color/colorAccent" />
 </LinearLayout>

@@ -71,12 +71,9 @@ public class RatingBarActivity extends Activity implements RatingView {
 
     @OnClick(R.id.btn_rate)
     public void rateClick() {
-        if (et_quntity.getText().toString().equals("")) {
-            Toast.makeText(getApplicationContext(),"Please enter Qualtity",Toast.LENGTH_LONG).show();
 
-        }else {
             ratingPresenter.submitRatings(Integer.toString(SPManager.getInstance(getApplicationContext()).retriveInt("product_id", 1)), (int) Ratingbar.getRating());
-        }
+
     }
 
     private void setUpDisplayMetrics() {
