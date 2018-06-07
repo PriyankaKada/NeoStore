@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Login.LoginActivity"
+            android:name=".login.LoginActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,39 +25,39 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignUp.SignUpActivity" />
+        <activity android:name=".signUp.SignUpActivity" />
         <activity
-            android:name=".Dashboard.DashboardActivity"
+            android:name=".dashboard.DashboardActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Login.forgotPassword.ForgotPasswordActivity"
+            android:name=".login.forgotPassword.ForgotPasswordActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".ProductListing.ProductListingActivity"
+            android:name=".productListing.ProductListingActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             >
         </activity>
         <activity
-            android:name=".ProductDetail.ProductDetailActivity"
+            android:name=".productDetail.ProductDetailActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".Rating.RatingBarActivity"
+            android:name=".rating.RatingBarActivity"
             android:theme="@style/AppTheme.CustomTheme"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".MyAccount.MyAccountActivity"
+            android:name=".myAccount.MyAccountActivity"
             android:theme="@style/AppTheme_noActionBar" />
         <activity
-            android:name=".ResetPassword.ResetPasswordActivity"
+            android:name=".resetPassword.ResetPasswordActivity"
             android:theme="@style/AppTheme_noActionBar" />
         <activity
-            android:name=".MyCart.MyCartActivity"
+            android:name=".myCart.MyCartActivity"
             android:theme="@style/AppTheme_noActionBar" />
-        <activity android:name=".MyCart.test_activity" />
+        <activity android:name=".myCart.test_activity" />
         <activity
-            android:name=".Address.AddAddressActivity"
+            android:name=".address.AddAddressActivity"
             android:theme="@style/AppTheme_noActionBar" />
-        <activity android:name=".Address.AddressListingActivity"
+        <activity android:name=".address.AddressListingActivity"
             android:theme="@style/AppTheme_noActionBar"></activity>
     </application>
 
