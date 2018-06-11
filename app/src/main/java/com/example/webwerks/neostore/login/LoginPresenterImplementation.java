@@ -22,6 +22,7 @@ public class LoginPresenterImplementation implements LoginPresenter {
     LoginView loginView;
     SPManager instance;
     Example res;
+  RetroHelper retroHelper=   RetroHelper.getInstance();
 
 
 
@@ -35,6 +36,19 @@ public class LoginPresenterImplementation implements LoginPresenter {
     public void preformLogin(String username, String password) {
         loginView.showProgressBar();
         networkcall(username, password);
+    }
+
+    @Override
+    public void onBackPressed() {
+        retroHelper=null;
+        loginView=null;
+
+    }
+
+    @Override
+    public void onDestroy() {
+        retroHelper=null;
+        loginView=null;
     }
 
     private void networkcall(String username, String password) {

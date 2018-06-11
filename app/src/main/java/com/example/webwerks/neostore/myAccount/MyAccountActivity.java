@@ -153,4 +153,14 @@ public class MyAccountActivity extends AppCompatActivity implements MyAccountVie
     public void showMessage(String message) {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+                            }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

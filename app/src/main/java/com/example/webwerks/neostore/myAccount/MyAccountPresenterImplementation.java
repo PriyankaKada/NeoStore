@@ -20,6 +20,7 @@ public class MyAccountPresenterImplementation implements MyAccountPresenter {
 MyAccountView myAccountView;
     private UserDetails res;
     private UserDetailsUpdates res_updates;
+      RetroHelper instnace=RetroHelper.getInstance();
 
     public MyAccountPresenterImplementation(MyAccountView myAccountView) {
         this.myAccountView=myAccountView;
@@ -37,6 +38,18 @@ MyAccountView myAccountView;
         myAccountView.showProgressBar();
 
         sentDatatoApi(access_token, first_name,last_name, email,  dob,  phone_no,  profile_pic);
+    }
+
+    @Override
+    public void onDestroy() {
+      instnace=null;
+      myAccountView=null;
+    }
+
+    @Override
+    public void onback() {
+        instnace=null;
+        myAccountView=null;
     }
 
     private void sentDatatoApi(String access_token,String first_name, String last_name, String email, String dob, String phone_no, String profile_pic) {

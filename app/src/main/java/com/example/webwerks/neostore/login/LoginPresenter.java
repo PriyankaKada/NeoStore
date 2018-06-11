@@ -6,4 +6,6 @@ package com.example.webwerks.neostore.login;
 
 public interface LoginPresenter {
     void preformLogin(String username, String password);
+    void onBackPressed();
+    void onDestroy();
 }

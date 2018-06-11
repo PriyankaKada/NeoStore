@@ -61,4 +61,16 @@ public class ForgotPasswordActivity extends Activity implements forgotPassView {
     public void startNewActivity() {
 
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        fpPresenter.onDestroy();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        fpPresenter.onBackPRessed();
+    }
 }

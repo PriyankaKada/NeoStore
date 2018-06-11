@@ -6,5 +6,8 @@ package com.example.webwerks.neostore.login.forgotPassword;
 
 public interface ForgotPassPresenter {
     void SendEmail(String email);
+    void onDestroy();
+    void onBackPRessed();
+
 
 }

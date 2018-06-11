@@ -15,8 +15,9 @@ import static android.content.ContentValues.TAG;
 
 public class ForgotPassImplementation implements ForgotPassPresenter {
 
-    private ForgotPasswordModel res;
     forgotPassView forgotPasswordView;
+    RetroHelper retroHelper = RetroHelper.getInstance();
+    private ForgotPasswordModel res;
 
     public ForgotPassImplementation(forgotPassView forgotPasswordView) {
         this.forgotPasswordView = forgotPasswordView;
@@ -26,6 +27,19 @@ public class ForgotPassImplementation implements ForgotPassPresenter {
     @Override
     public void SendEmail(String email) {
         networkcall(email);
+    }
+
+    @Override
+    public void onDestroy() {
+        forgotPasswordView = null;
+        retroHelper = null;
+
+    }
+
+    @Override
+    public void onBackPRessed() {
+        forgotPasswordView = null;
+        retroHelper = null;
     }
 
     private void networkcall(String email) {
